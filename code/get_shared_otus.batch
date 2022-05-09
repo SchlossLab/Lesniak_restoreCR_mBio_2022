@@ -1,0 +1,6 @@
+set.dir(input=data/mothur, output=data/mothur, seed=19760620)
+set.current(processors=8)
+dist.seqs(fasta=restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, cutoff=0.03)
+cluster(column=restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist, count=restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)
+make.shared(list=current, count=current, label=0.03)
+classify.otu(list=current, count=current, taxonomy=restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.pick.v4.wang.pick.taxonomy, label=0.03)

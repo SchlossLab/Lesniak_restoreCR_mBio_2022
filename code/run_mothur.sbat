@@ -1,0 +1,64 @@
+#!/bin/bash
+
+###############################
+#                             #
+#  1) Job Submission Options  #
+#                             #
+###############################
+
+# Name
+#SBATCH --job-name=run_mothur
+
+# Resources
+# For MPI, increase ntasks-per-node
+# For multithreading, increase cpus-per-task
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=24
+#SBATCH --mem-per-cpu=4GB
+#SBATCH --time=120:00:00
+
+# Account
+#SBATCH --account=pschloss1
+#SBATCH --partition=standard
+
+# Logs
+#SBATCH --mail-user=nlesniak@umich.edu
+#SBATCH --mail-type=END,FAIL
+#SBATCH -o scratch/mothur_log/mothur.output.%j.out
+
+echo 'Starting'
+
+
+#######################
+#
+# 2) Job Commands
+#
+######################
+
+# Connecting node to internet
+source /etc/profile.d/http_proxy.sh 
+
+# create all data and reference files
+bash code/get_references.batch
+
+# create files file
+Rscript code/make_files_file.R
+
+mothur=/nfs/turbo/schloss-lab/bin/mothur
+# run sequence files through mothur
+$mothur code/get_good_seqs.batch
+$mothur code/get_error.batch
+$mothur code/get_shared_otus.batch
+#rename and split shared files
+mv data/mothur/restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.shared data/mothur/complete.sample.final.shared
+$mothur "#remove.groups(shared=data/mothur/complete.sample.final.shared, groups=mock-mock3-mock4-mock5-mock6-mock8-mock9-mock10-mock11-mock12-mock13-mock15-mock16-mock32-mock53)"
+mv data/mothur/complete.sample.final.0.03.pick.shared data/mothur/sample.final.shared
+$mothur "#set.dir(input=data/mothur, output=data/mothur);
+	summary.single(shared=sample.final.shared, calc=nseqs-coverage-sobs-invsimpson, subsample=2480);
+	dist.shared(shared=sample.final.shared, calc=thetayc, subsample=2480);
+	sub.sample(shared=sample.final.shared, size=2480);
+	get.groups(shared=complete.sample.final.shared, groups=mock-mock3-mock4-mock5-mock6-mock8-mock9-mock10-mock11-mock12-mock13-mock14-mock15-mock16-mock32-mock53)"
+mv data/mothur/complete.sample.final.0.03.pick.shared data/mothur/mock.sample.final.shared
+mv data/mothur/restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.0.03.cons.taxonomy data/mothur/final.taxonomy
+mv data/mothur/restore_cr.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.error.count data/mothur/sample.error.count

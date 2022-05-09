@@ -1,0 +1,51 @@
+mkdir data/scratch/
+
+mothur=/nfs/turbo/schloss-lab/bin/mothur
+
+###############################################################################
+echo PROGRESS: Preparing SILVA database v4 sequence alignment files.
+###############################################################################
+# Downloading the prepared SILVA database from the mothur website
+# This version is from v138 and described at https://mothur.org/blog/2020/SILVA-v138-reference-files/
+wget -N -P data/scratch/ https://mothur.s3.us-east-2.amazonaws.com/wiki/silva.seed_v138.tgz
+# Decompressing the database
+tar xvzf data/scratch/silva.seed_v138.tgz -C data/scratch/
+
+# Using mothur to pull out the v4 region from bacterial sequences
+# And rename the output file and moving it from the tmp dir to the output dir
+$mothur "#set.current(outputdir=data/scratch/, processors=8);
+	get.lineage(fasta=data/scratch/silva.seed_v138.align, taxonomy=data/scratch/silva.seed_v138.tax, taxon=Bacteria);
+	pcr.seqs(fasta=data/scratch/silva.seed_v138.pick.align, start=11894, end=25319, keepdots=F)"
+mv data/scratch/silva.seed_v138.pick.pcr.align data/references/silva.v4.align
+
+###############################################################################
+echo PROGRESS: Preparing Ribosomal Database Project taxonomy files.
+###############################################################################
+# Downloading the prepared RDP database from the mothur website
+# For more information see https://mothur.org/blog/2017/RDP-v16-reference_files/
+wget -N -P data/scratch/ https://mothur.s3.us-east-2.amazonaws.com/wiki/trainset16_022016.pds.tgz
+
+# Decompressing the database
+tar xvzf data/scratch/trainset16_022016.pds.tgz -C data/scratch/
+mv data/scratch/trainset16_022016.pds/* data/scratch/
+
+#get the V4 region of the RDP training set
+$mothur "#align.seqs(fasta=data/scratch/trainset16_022016.pds.fasta, reference=data/references/silva.v4.align, processors=8);\
+		screen.seqs(fasta=current, taxonomy=data/scratch/trainset16_022016.pds.tax, start=1, end=13425);\
+		degap.seqs(fasta=current)"
+mv data/scratch/trainset16_022016.pds.good.ng.fasta data/references/trainset16_022016.v4.fasta
+mv data/scratch/trainset16_022016.pds.good.tax data/references/trainset16_022016.v4.tax
+
+###############################################################################
+echo PROGRESS: Preparing mock sequence files for mothur. 
+###############################################################################
+# We used Zymo Mock as our mock community standard
+# note that Zymo named the 5 operon of Salmonella twice instead of the 7 operon
+wget -N https://s3.amazonaws.com/zymo-files/BioPool/ZymoBIOMICS.STD.refseq.v2.zip
+unzip ZymoBIOMICS.STD.refseq.v2.zip
+rm ZymoBIOMICS.STD.refseq.v2/ssrRNAs/*itochondria_ssrRNA.fasta #V4 primers don't come close to annealing to these
+cat ZymoBIOMICS.STD.refseq.v2/ssrRNAs/*fasta > zymo_temp.fasta
+sed '0,/Salmonella_enterica_16S_5/{s/Salmonella_enterica_16S_5/Salmonella_enterica_16S_7/}' zymo_temp.fasta > zymo.fasta
+mothur "#align.seqs(fasta=zymo.fasta, reference=data/references/silva.v4.align, processors=12)"
+mv zymo.align data/references/zymo_mock.align
+rm -rf zymo* ZymoBIOMICS.STD.refseq.v2* zymo_temp.fasta

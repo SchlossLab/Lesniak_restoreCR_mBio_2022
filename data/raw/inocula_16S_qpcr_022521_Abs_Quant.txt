@@ -1,0 +1,89 @@
+sample_label	location	Cq	Slope	EPF	sample	correct_sample	group	dilution	day
+A1	A1	14.44	0.53	3.4	inoculum_1to10e3_exp_10	NA	inoculum	3	1
+A2	A2	10	0.34	2.14	inoculum1_1to10e1_exp_07	NA	inoculum	1	1
+A3	A3	27.09	0.48	3.18	inoculum_1to10e4_exp11_d2	NA	inoculum	4	2
+A4	A4	10.97	0.38	2.86	inoculum_1to10e2_exp_10	NA	inoculum	2	1
+A5	A5	10.11	0.44	3.3	inoculum_1to10e3_exp06_d2	NA	inoculum	3	2
+A6	A6	11.26	0.33	2.35	inoculum_1to10e2_exp_07	NA	inoculum	2	1
+A7	A7	24.77	0.47	2.87	inoculum_1to10e6_exp_08	NA	inoculum	6	1
+A8	A8	15.63	0.5	3.46	inoculum_1to10e3_exp_06	NA	inoculum	3	1
+A9	A9	12.4	0.43	3.12	inoculum_1to10e2_exp11_d2	NA	inoculum	2	2
+A10	A10	9.79	0.35	2.29	inoculum1_1to10e1_exp07_d2	NA	inoculum	1	2
+A11	A11	14.62	0.46	3.18	inoculum_1to10e3_exp_08	NA	inoculum	3	1
+A12	A12	11.5	0.35	2.75	inoculum2_1to10e1_exp07_d2	inoculum2_1to10e1_exp07_d2	inoculum	1	2
+B1	B1	11.71	0.5	3.28	inoculum_1to10e2_exp07_d2	NA	inoculum	2	2
+B2	B2	25.69	0.38	2.66	inoculum_1to10e2_exp07_d2	inoculum_1to10e2_exp07_d2	inoculum	2	2
+B3	B3	9.96	0.28	2.36	inoculum2_1to10e1_exp07_d2	NA	inoculum	1	2
+B4	B4	11.37	0.32	2.64	inoculum_1to10e3_exp_08	inoculum_1to10e3_exp_08	inoculum	3	1
+B5	B5	16.64	0.38	3.44	inoculum1_1to10e1_exp07_d2	inoculum1_1to10e1_exp07_d2	inoculum	1	2
+B6	B6	10.65	0.23	2.02	inoculum_1to10e2_exp11_d2	inoculum_1to10e2_exp11_d2	inoculum	2	2
+B7	B7	13.89	0.47	3.78	inoculum_1to10e3_exp_06	inoculum_1to10e3_exp_06	inoculum	3	1
+B8	B8	14.19	0.28	2.39	inoculum_1to10e3_exp_07	NA	inoculum	3	1
+B9	B9	26.43	0.31	2.48	inoculum_pbs_exp10_d1	NA	NA	PBS	1
+B10	B10	9.53	0.25	1.87	inoculum_1to10e1_exp10_d2	NA	inoculum	1	2
+B11	B11	9.59	0.25	1.82	inoculum_1to10e1_exp_08	NA	inoculum	1	1
+B12	B12	15.16	0.55	3.45	inoculum_1to10e3_exp_04	NA	inoculum	3	1
+C1	C1	14.49	0.47	3.17	inoculum_1to10e3_exp10_d2	NA	inoculum	3	2
+C2	C2	9.64	0.2	1.81	inoculum_1to10e1_exp_10	NA	inoculum	1	1
+C3	C3	17.42	0.38	3.1	inoculum_1to10e4_exp10_d2	NA	inoculum	4	2
+C4	C4	10.26	0.32	2.7	inoculum_1to10e1_exp_11	NA	inoculum	1	1
+C5	C5	12.04	0.32	2.62	inoculum_1to10e2_exp_05	NA	inoculum	2	1
+C6	C6	9.93	0.3	2.43	inoculum_1to10e1_exp11_d2	NA	inoculum	1	2
+C7	C7	21.75	0.43	3.25	inoculum_pbs_exp06_d1	NA	NA	PBS	1
+C8	C8	14.82	0.4	2.9	inoculum_1to10e3_exp05_d2	inoculum_1to10e3_exp05_d2	inoculum	3	2
+C9	C9	22.05	0.37	2.8	inoculum_pbs_exp08_d1	inoculum_pbs_exp08_d1	NA	PBS	1
+C10	C10	26.65	0.38	2.77	inoculum_pbs_exp09_d1	inoculum_pbs_exp09_d1	NA	PBS	1
+C11	C11	24.1	0.41	2.83	inoculum_pbs_exp09_d1	inoculum_pbs_exp09_d1	NA	PBS	1
+C12	C12	17.6	0.51	3.4	inoculum_1to10e6_exp11_d2	inoculum_1to10e6_exp11_d2	inoculum	6	2
+D1	D1	12.29	0.52	3.3	inoculum_1to10e6_exp11_d2	inoculum_1to10e6_exp11_d2	inoculum	6	2
+D2	D2	26.84	0.41	2.85	inoculum_pbs_exp08_d1	NA	NA	PBS	1
+D3	D3	26.75	0.4	2.83	inoculum_1to10e3_exp05_d2	NA	inoculum	3	2
+D4	D4	10.03	0.34	2.86	inoculum_1to10e1_exp_05	NA	inoculum	1	1
+D5	D5	15.02	0.4	3.19	inoculum_1to10e3_exp11_d2	NA	inoculum	3	2
+D6	D6	26.28	0.21	1.95	inoculum_pbs_exp05_d1	NA	NA	PBS	1
+D7	D7	11.05	0.15	2.96	inoculum_1to10e2_exp_08	NA	inoculum	2	1
+D8	D8	17.18	0.39	2.97	inoculum_1to10e4_exp_10	NA	inoculum	4	1
+D9	D9	9.81	0.33	2.37	inoculum_1to10e1_exp06_d2	NA	inoculum	1	2
+D10	D10	10.03	0.33	2.42	inoculum2_1to10e1_exp_07	NA	inoculum	1	1
+D11	D11	12.84	0.38	2.68	inoculum_1to10e4_exp_11	NA	inoculum	4	1
+D12	D12	12.53	0.69	3.84	inoculum_1to10e2_exp_11	NA	inoculum	2	1
+E1	E1	12.84	0.52	3.27	inoculum_1to10e2_exp_06	NA	inoculum	2	1
+E2	E2	22.37	0.39	2.66	inoculum_1to10e5_exp10_d2	NA	inoculum	5	2
+E3	E3	10.04	0.38	2.73	inoculum_1to10e1_exp_06	NA	inoculum	1	1
+E4	E4	12.25	0.38	2.95	inoculum_1to10e2_exp05_d2	NA	inoculum	2	2
+E5	E5	26.7	0.3	2.45	inoculum_pbs_exp10_d2	NA	NA	PBS	2
+E6	E6	25.49	0.34	2.61	inoculum_pbs_exp11_d2	NA	NA	PBS	2
+E7	E7	9.48	0.23	1.8	inoculum_1to10e1_exp05_d2	NA	inoculum	1	2
+E8	E8	22.12	0.33	2.53	inoculum_1to10e5_exp11_d2	NA	inoculum	5	2
+E9	E9	26.87	0.34	2.76	inoculum_pbs_exp11_d1	NA	NA	PBS	1
+E10	E10	15.03	0.33	2.43	inoculum_1to10e3_exp07_d2	NA	inoculum	3	2
+E11	E11	10.14	0.34	2.31	inoculum_1to10e1a_exp_09	NA	NA	1	1
+E12	E12	9.31	0.32	2.26	inoculum_1to10e1_exp_09	NA	inoculum	1	1
+F1	F1	12.97	0.31	2.77	inoculum_1to10e3_exp_09	NA	inoculum	3	1
+F2	F2	22.26	0.26	2.11	inoculum_1to10e5_exp_08	NA	inoculum	5	1
+F3	F3	20.08	0.36	2.8	inoculum_1to10e1_exp_04	NA	inoculum	1	1
+F4	F4	24.94	0.32	2.49	inoculum_1to10e6_exp10_d2	NA	inoculum	6	2
+F5	F5	18.14	0.34	3.01	inoculum_1to10e2_exp_04	NA	inoculum	2	1
+F6	F6	15.08	0.32	2.75	inoculum_1to10e3_exp_11	NA	inoculum	3	1
+F7	F7	22.95	0.27	2.29	inoculum_pbs_exp04_d1	NA	NA	PBS	1
+F8	F8	14.83	0.35	3.2	inoculum_1to10e3_exp_05	NA	inoculum	3	1
+F9	F9	23.96	0.31	2.38	inoculum_1to10e6_exp_10	NA	inoculum	6	1
+F10	F10	23.66	0.34	2.46	inoculum_1to10e5_exp_10	NA	inoculum	5	1
+F11	F11	11.77	0.47	3.06	inoculum_1to10e2_exp10_d2	NA	inoculum	2	2
+F12	F12	22.09	0.42	2.77	inoculum_1to10e5_exp_11	NA	inoculum	5	1
+G1	G1	12.78	0.4	3	inoculum_1to10e2_exp06_d2	NA	inoculum	2	2
+G2	G2	25.07	0.33	2.65	inoculum_1to10e6_exp_11	NA	inoculum	6	1
+G3	G3	NA	0.03	0.95	inoculum_1to10e2_exp_09	NA	inoculum	2	1
+G4	G4	19.57	0.34	2.73	inoculum_1to10e4_exp_08	NA	inoculum	4	1
+mock_1	H6	11.09	0.48	3.02	mock_1	NA	NA	"Positive
+Control"	1
+mock_2	H7	11.54	0.39	2.54	mock_2	NA	NA	"Positive
+Control"	1
+mock_3	H8	11.38	0.45	2.9	mock_3	NA	NA	"Positive
+Control"	1
+water_1	H10	26.69	0.36	2.57	water_1	NA	NA	"Negative
+Control"	1
+water_2	H11	27.22	0.49	3.06	water_2	NA	NA	"Negative
+Control"	1
+water_3	H12	26.44	0.36	2.55	water_3	NA	NA	"Negative
+Control"	1

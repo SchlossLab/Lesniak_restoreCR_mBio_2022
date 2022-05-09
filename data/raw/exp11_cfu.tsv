@@ -1,0 +1,241 @@
+group	mouse_id	day	weight	cfu	antibiotic	date	treatment
+NT	NT_11_0	-9	29.9	NA	Streptomycin	1/14/2020	PBS
+NT	NT_11_R	-9	30.5	NA	Streptomycin	1/14/2020	PBS
+-6	-6_11_0	-9	23.3	NA	Streptomycin	1/14/2020	Stool 1:10^6
+-6	-6_11_R	-9	24	NA	Streptomycin	1/14/2020	Stool 1:10^6
+-5	-5_11_20	-9	28	NA	Streptomycin	1/14/2020	Stool 1:10^5
+-5	-5_11_2R	-9	29.5	NA	Streptomycin	1/14/2020	Stool 1:10^5
+-4	-4_11_0	-9	28.8	NA	Streptomycin	1/14/2020	Stool 1:10^4
+-4	-4_11_L	-9	26	NA	Streptomycin	1/14/2020	Stool 1:10^4
+-4	-4_11_R	-9	24.2	NA	Streptomycin	1/14/2020	Stool 1:10^4
+-3	-3_11_30	-9	26.3	NA	Streptomycin	1/14/2020	Stool 1:10^3
+-3	-3_11_3L	-9	26	NA	Streptomycin	1/14/2020	Stool 1:10^3
+-3	-3_11_3R	-9	28.2	NA	Streptomycin	1/14/2020	Stool 1:10^3
+-2	-2_11_0	-9	25.1	NA	Streptomycin	1/14/2020	Stool 1:10^2
+-2	-2_11_R	-9	26.2	NA	Streptomycin	1/14/2020	Stool 1:10^2
+-1	-1_11_10	-9	29.6	NA	Streptomycin	1/14/2020	Stool 1:10
+-1	-1_11_1R	-9	30.4	NA	Streptomycin	1/14/2020	Stool 1:10
+NT	NT_11_0	-4	28.2	NA	Streptomycin	1/19/2020	PBS
+NT	NT_11_R	-4	29.5	NA	Streptomycin	1/19/2020	PBS
+-6	-6_11_0	-4	24.6	NA	Streptomycin	1/19/2020	Stool 1:10^6
+-6	-6_11_R	-4	25.2	NA	Streptomycin	1/19/2020	Stool 1:10^6
+-5	-5_11_20	-4	27.8	NA	Streptomycin	1/19/2020	Stool 1:10^5
+-5	-5_11_2R	-4	29.9	NA	Streptomycin	1/19/2020	Stool 1:10^5
+-4	-4_11_0	-4	28.7	NA	Streptomycin	1/19/2020	Stool 1:10^4
+-4	-4_11_L	-4	26.7	NA	Streptomycin	1/19/2020	Stool 1:10^4
+-4	-4_11_R	-4	23.7	NA	Streptomycin	1/19/2020	Stool 1:10^4
+-3	-3_11_30	-4	26.2	NA	Streptomycin	1/19/2020	Stool 1:10^3
+-3	-3_11_3L	-4	25.8	NA	Streptomycin	1/19/2020	Stool 1:10^3
+-3	-3_11_3R	-4	28.1	NA	Streptomycin	1/19/2020	Stool 1:10^3
+-2	-2_11_0	-4	26	NA	Streptomycin	1/19/2020	Stool 1:10^2
+-2	-2_11_R	-4	26.1	NA	Streptomycin	1/19/2020	Stool 1:10^2
+-1	-1_11_10	-4	29.8	NA	Streptomycin	1/19/2020	Stool 1:10
+-1	-1_11_1R	-4	31.2	NA	Streptomycin	1/19/2020	Stool 1:10
+NT	NT_11_0	-2	29.2	NA	Streptomycin	1/21/2020	PBS
+NT	NT_11_R	-2	29.7	NA	Streptomycin	1/21/2020	PBS
+-6	-6_11_0	-2	25	NA	Streptomycin	1/21/2020	Stool 1:10^6
+-6	-6_11_R	-2	25.5	NA	Streptomycin	1/21/2020	Stool 1:10^6
+-5	-5_11_20	-2	28.6	NA	Streptomycin	1/21/2020	Stool 1:10^5
+-5	-5_11_2R	-2	30.7	NA	Streptomycin	1/21/2020	Stool 1:10^5
+-4	-4_11_0	-2	28.9	NA	Streptomycin	1/21/2020	Stool 1:10^4
+-4	-4_11_L	-2	26.5	NA	Streptomycin	1/21/2020	Stool 1:10^4
+-4	-4_11_R	-2	23.8	NA	Streptomycin	1/21/2020	Stool 1:10^4
+-3	-3_11_30	-2	26.2	NA	Streptomycin	1/21/2020	Stool 1:10^3
+-3	-3_11_3L	-2	26.1	NA	Streptomycin	1/21/2020	Stool 1:10^3
+-3	-3_11_3R	-2	28.3	NA	Streptomycin	1/21/2020	Stool 1:10^3
+-2	-2_11_0	-2	25.5	NA	Streptomycin	1/21/2020	Stool 1:10^2
+-2	-2_11_R	-2	26.1	NA	Streptomycin	1/21/2020	Stool 1:10^2
+-1	-1_11_10	-2	29.9	NA	Streptomycin	1/21/2020	Stool 1:10
+-1	-1_11_1R	-2	32.4	NA	Streptomycin	1/21/2020	Stool 1:10
+NT	NT_11_0	-1	29.8	NA	Streptomycin	1/22/2020	PBS
+NT	NT_11_R	-1	29.9	NA	Streptomycin	1/22/2020	PBS
+-6	-6_11_0	-1	25.1	NA	Streptomycin	1/22/2020	Stool 1:10^6
+-6	-6_11_R	-1	25.7	NA	Streptomycin	1/22/2020	Stool 1:10^6
+-5	-5_11_20	-1	28.3	NA	Streptomycin	1/22/2020	Stool 1:10^5
+-5	-5_11_2R	-1	30.4	NA	Streptomycin	1/22/2020	Stool 1:10^5
+-4	-4_11_0	-1	29.6	NA	Streptomycin	1/22/2020	Stool 1:10^4
+-4	-4_11_L	-1	26.8	NA	Streptomycin	1/22/2020	Stool 1:10^4
+-4	-4_11_R	-1	24.8	NA	Streptomycin	1/22/2020	Stool 1:10^4
+-3	-3_11_30	-1	26.3	NA	Streptomycin	1/22/2020	Stool 1:10^3
+-3	-3_11_3L	-1	26.3	NA	Streptomycin	1/22/2020	Stool 1:10^3
+-3	-3_11_3R	-1	28.7	NA	Streptomycin	1/22/2020	Stool 1:10^3
+-2	-2_11_0	-1	26	NA	Streptomycin	1/22/2020	Stool 1:10^2
+-2	-2_11_R	-1	26.6	NA	Streptomycin	1/22/2020	Stool 1:10^2
+-1	-1_11_10	-1	30	NA	Streptomycin	1/22/2020	Stool 1:10
+-1	-1_11_1R	-1	32.6	NA	Streptomycin	1/22/2020	Stool 1:10
+NT	NT_11_0	0	29.4	0.00	Streptomycin	1/23/2020	PBS
+NT	NT_11_R	0	30.3	0.00	Streptomycin	1/23/2020	PBS
+-6	-6_11_0	0	24.9	0.00	Streptomycin	1/23/2020	Stool 1:10^6
+-6	-6_11_R	0	25.3	0.00	Streptomycin	1/23/2020	Stool 1:10^6
+-5	-5_11_20	0	27.8	0.00	Streptomycin	1/23/2020	Stool 1:10^5
+-5	-5_11_2R	0	29.7	0.00	Streptomycin	1/23/2020	Stool 1:10^5
+-4	-4_11_0	0	29	0.00	Streptomycin	1/23/2020	Stool 1:10^4
+-4	-4_11_L	0	27	0.00	Streptomycin	1/23/2020	Stool 1:10^4
+-4	-4_11_R	0	24.6	0.00	Streptomycin	1/23/2020	Stool 1:10^4
+-3	-3_11_30	0	26.2	0.00	Streptomycin	1/23/2020	Stool 1:10^3
+-3	-3_11_3L	0	26.8	0.00	Streptomycin	1/23/2020	Stool 1:10^3
+-3	-3_11_3R	0	28.8	0.00	Streptomycin	1/23/2020	Stool 1:10^3
+-2	-2_11_0	0	26.1	0.00	Streptomycin	1/23/2020	Stool 1:10^2
+-2	-2_11_R	0	27	0.00	Streptomycin	1/23/2020	Stool 1:10^2
+-1	-1_11_10	0	29.8	0.00	Streptomycin	1/23/2020	Stool 1:10
+-1	-1_11_1R	0	31.2	0.00	Streptomycin	1/23/2020	Stool 1:10
+NT	NT_11_0	1	29	110000000.00	Streptomycin	1/24/2020	PBS
+NT	NT_11_R	1	30	78000000.00	Streptomycin	1/24/2020	PBS
+-6	-6_11_0	1	24	128000000.00	Streptomycin	1/24/2020	Stool 1:10^6
+-6	-6_11_R	1	24.2	136000000.00	Streptomycin	1/24/2020	Stool 1:10^6
+-5	-5_11_20	1	28.2	20000000.00	Streptomycin	1/24/2020	Stool 1:10^5
+-5	-5_11_2R	1	30.3	44000000.00	Streptomycin	1/24/2020	Stool 1:10^5
+-4	-4_11_0	1	29.2	34000000.00	Streptomycin	1/24/2020	Stool 1:10^4
+-4	-4_11_L	1	26.7	54000000.00	Streptomycin	1/24/2020	Stool 1:10^4
+-4	-4_11_R	1	24.4	48000000.00	Streptomycin	1/24/2020	Stool 1:10^4
+-3	-3_11_30	1	26.2	46000.00	Streptomycin	1/24/2020	Stool 1:10^3
+-3	-3_11_3L	1	26.6	1000.00	Streptomycin	1/24/2020	Stool 1:10^3
+-3	-3_11_3R	1	29	13000.00	Streptomycin	1/24/2020	Stool 1:10^3
+-2	-2_11_0	1	26.2	37000.00	Streptomycin	1/24/2020	Stool 1:10^2
+-2	-2_11_R	1	26.7	20000000.00	Streptomycin	1/24/2020	Stool 1:10^2
+-1	-1_11_10	1	30.5	50000000.00	Streptomycin	1/24/2020	Stool 1:10
+-1	-1_11_1R	1	31.7	26000000.00	Streptomycin	1/24/2020	Stool 1:10
+NT	NT_11_0	2	28.3	34000000.00	Streptomycin	1/25/2020	PBS
+NT	NT_11_R	2	29.6	12500000.00	Streptomycin	1/25/2020	PBS
+-6	-6_11_0	2	22.5	182000000.00	Streptomycin	1/25/2020	Stool 1:10^6
+-6	-6_11_R	2	24.4	174000000.00	Streptomycin	1/25/2020	Stool 1:10^6
+-5	-5_11_20	2	27.6	4100000.00	Streptomycin	1/25/2020	Stool 1:10^5
+-5	-5_11_2R	2	27.7	14900000.00	Streptomycin	1/25/2020	Stool 1:10^5
+-4	-4_11_0	2	28.8	16500000.00	Streptomycin	1/25/2020	Stool 1:10^4
+-4	-4_11_L	2	26.1	60000000.00	Streptomycin	1/25/2020	Stool 1:10^4
+-4	-4_11_R	2	22.2	6500000.00	Streptomycin	1/25/2020	Stool 1:10^4
+-3	-3_11_30	2	25.6	2400.00	Streptomycin	1/25/2020	Stool 1:10^3
+-3	-3_11_3L	2	25.9	0.00	Streptomycin	1/25/2020	Stool 1:10^3
+-3	-3_11_3R	2	28.6	1500.00	Streptomycin	1/25/2020	Stool 1:10^3
+-2	-2_11_0	2	25.7	20000.00	Streptomycin	1/25/2020	Stool 1:10^2
+-2	-2_11_R	2	26.4	1633333.33	Streptomycin	1/25/2020	Stool 1:10^2
+-1	-1_11_10	2	29.2	1733333.33	Streptomycin	1/25/2020	Stool 1:10
+-1	-1_11_1R	2	31.5	1260000.00	Streptomycin	1/25/2020	Stool 1:10
+NT	NT_11_0	3	28.9	40000000.00	Streptomycin	1/26/2020	PBS
+NT	NT_11_R	3	30	40000000.00	Streptomycin	1/26/2020	PBS
+-6	-6_11_0	3	22.4	136000000.00	Streptomycin	1/26/2020	Stool 1:10^6
+-6	-6_11_R	3	23.5	134000000.00	Streptomycin	1/26/2020	Stool 1:10^6
+-5	-5_11_20	3	28.4	5200000.00	Streptomycin	1/26/2020	Stool 1:10^5
+-5	-5_11_2R	3	28	830000.00	Streptomycin	1/26/2020	Stool 1:10^5
+-4	-4_11_0	3	28.3	1700000.00	Streptomycin	1/26/2020	Stool 1:10^4
+-4	-4_11_L	3	24.7	50000000.00	Streptomycin	1/26/2020	Stool 1:10^4
+-4	-4_11_R	3	22.6	18400000.00	Streptomycin	1/26/2020	Stool 1:10^4
+-3	-3_11_30	3	25.6	0.00	Streptomycin	1/26/2020	Stool 1:10^3
+-3	-3_11_3L	3	25.5	0.00	Streptomycin	1/26/2020	Stool 1:10^3
+-3	-3_11_3R	3	28.3	0.00	Streptomycin	1/26/2020	Stool 1:10^3
+-2	-2_11_0	3	25.5	0.00	Streptomycin	1/26/2020	Stool 1:10^2
+-2	-2_11_R	3	26.2	0.00	Streptomycin	1/26/2020	Stool 1:10^2
+-1	-1_11_10	3	29.3	103000.00	Streptomycin	1/26/2020	Stool 1:10
+-1	-1_11_1R	3	30.4	39000.00	Streptomycin	1/26/2020	Stool 1:10
+NT	NT_11_0	4	28.2	30000000.00	Streptomycin	1/27/2020	PBS
+NT	NT_11_R	4	29.3	24000000.00	Streptomycin	1/27/2020	PBS
+-6	-6_11_0	4	23.7	28000000.00	Streptomycin	1/27/2020	Stool 1:10^6
+-6	-6_11_R	4	25.6	96000000.00	Streptomycin	1/27/2020	Stool 1:10^6
+-5	-5_11_20	4	28	1670000.00	Streptomycin	1/27/2020	Stool 1:10^5
+-5	-5_11_2R	4	29.5	1720000.00	Streptomycin	1/27/2020	Stool 1:10^5
+-4	-4_11_0	4	29	53000.00	Streptomycin	1/27/2020	Stool 1:10^4
+-4	-4_11_L	4	26.2	1140000.00	Streptomycin	1/27/2020	Stool 1:10^4
+-4	-4_11_R	4	23.6	4346666.67	Streptomycin	1/27/2020	Stool 1:10^4
+-3	-3_11_30	4	26	0.00	Streptomycin	1/27/2020	Stool 1:10^3
+-3	-3_11_3L	4	26	0.00	Streptomycin	1/27/2020	Stool 1:10^3
+-3	-3_11_3R	4	28	0.00	Streptomycin	1/27/2020	Stool 1:10^3
+-2	-2_11_0	4	26.3	0.00	Streptomycin	1/27/2020	Stool 1:10^2
+-2	-2_11_R	4	26.8	0.00	Streptomycin	1/27/2020	Stool 1:10^2
+-1	-1_11_10	4	29.3	1000.00	Streptomycin	1/27/2020	Stool 1:10
+-1	-1_11_1R	4	30.4	2400.00	Streptomycin	1/27/2020	Stool 1:10
+NT	NT_11_0	5	28.2	30000000.00	Streptomycin	1/28/2020	PBS
+NT	NT_11_R	5	29.1	4100000.00	Streptomycin	1/28/2020	PBS
+-6	-6_11_0	5	24.2	15400000.00	Streptomycin	1/28/2020	Stool 1:10^6
+-6	-6_11_R	5	25.3	72000000.00	Streptomycin	1/28/2020	Stool 1:10^6
+-5	-5_11_20	5	28	260000.00	Streptomycin	1/28/2020	Stool 1:10^5
+-5	-5_11_2R	5	29.3	87000.00	Streptomycin	1/28/2020	Stool 1:10^5
+-4	-4_11_0	5	28.9	600.00	Streptomycin	1/28/2020	Stool 1:10^4
+-4	-4_11_L	5	27.6	620000.00	Streptomycin	1/28/2020	Stool 1:10^4
+-4	-4_11_R	5	23.6	47000.00	Streptomycin	1/28/2020	Stool 1:10^4
+-3	-3_11_30	5	25.7	0.00	Streptomycin	1/28/2020	Stool 1:10^3
+-3	-3_11_3L	5	25.5	0.00	Streptomycin	1/28/2020	Stool 1:10^3
+-3	-3_11_3R	5	28	0.00	Streptomycin	1/28/2020	Stool 1:10^3
+-2	-2_11_0	5	25.7	0.00	Streptomycin	1/28/2020	Stool 1:10^2
+-2	-2_11_R	5	26.2	0.00	Streptomycin	1/28/2020	Stool 1:10^2
+-1	-1_11_10	5	29.9	0.00	Streptomycin	1/28/2020	Stool 1:10
+-1	-1_11_1R	5	31.6	0.00	Streptomycin	1/28/2020	Stool 1:10
+NT	NT_11_0	6	28	15000000.00	Streptomycin	1/29/2020	PBS
+NT	NT_11_R	6	29.4	5900000.00	Streptomycin	1/29/2020	PBS
+-6	-6_11_0	6	24.5	38000000.00	Streptomycin	1/29/2020	Stool 1:10^6
+-6	-6_11_R	6	25.5	36000000.00	Streptomycin	1/29/2020	Stool 1:10^6
+-5	-5_11_20	6	27.7	1392000.00	Streptomycin	1/29/2020	Stool 1:10^5
+-5	-5_11_2R	6	29.2	224000.00	Streptomycin	1/29/2020	Stool 1:10^5
+-4	-4_11_0	6	29	4600.00	Streptomycin	1/29/2020	Stool 1:10^4
+-4	-4_11_L	6	26.6	7700.00	Streptomycin	1/29/2020	Stool 1:10^4
+-4	-4_11_R	6	23.9	0.00	Streptomycin	1/29/2020	Stool 1:10^4
+-3	-3_11_30	6	25.5	0.00	Streptomycin	1/29/2020	Stool 1:10^3
+-3	-3_11_3L	6	25.4	0.00	Streptomycin	1/29/2020	Stool 1:10^3
+-3	-3_11_3R	6	27.7	0.00	Streptomycin	1/29/2020	Stool 1:10^3
+-2	-2_11_0	6	25.7	0.00	Streptomycin	1/29/2020	Stool 1:10^2
+-2	-2_11_R	6	25.5	0.00	Streptomycin	1/29/2020	Stool 1:10^2
+-1	-1_11_10	6	29.6	0.00	Streptomycin	1/29/2020	Stool 1:10
+-1	-1_11_1R	6	31	0.00	Streptomycin	1/29/2020	Stool 1:10
+NT	NT_11_0	7	28.1	30000000.00	Streptomycin	1/30/2020	PBS
+NT	NT_11_R	7	29.2	11200000.00	Streptomycin	1/30/2020	PBS
+-6	-6_11_0	7	23.8	18000000.00	Streptomycin	1/30/2020	Stool 1:10^6
+-6	-6_11_R	7	125.8	40000000.00	Streptomycin	1/30/2020	Stool 1:10^6
+-5	-5_11_20	7	27.8	340000.00	Streptomycin	1/30/2020	Stool 1:10^5
+-5	-5_11_2R	7	29.1	400000.00	Streptomycin	1/30/2020	Stool 1:10^5
+-4	-4_11_0	7	28.6	1400.00	Streptomycin	1/30/2020	Stool 1:10^4
+-4	-4_11_L	7	26.6	1200.00	Streptomycin	1/30/2020	Stool 1:10^4
+-4	-4_11_R	7	23.9	400.00	Streptomycin	1/30/2020	Stool 1:10^4
+-3	-3_11_30	7	25.5	0.00	Streptomycin	1/30/2020	Stool 1:10^3
+-3	-3_11_3L	7	25.4	0.00	Streptomycin	1/30/2020	Stool 1:10^3
+-3	-3_11_3R	7	27.9	0.00	Streptomycin	1/30/2020	Stool 1:10^3
+-2	-2_11_0	7	25.6	NA	Streptomycin	1/30/2020	Stool 1:10^2
+-2	-2_11_R	7	26	0.00	Streptomycin	1/30/2020	Stool 1:10^2
+-1	-1_11_10	7	29.5	0.00	Streptomycin	1/30/2020	Stool 1:10
+-1	-1_11_1R	7	31.5	0.00	Streptomycin	1/30/2020	Stool 1:10
+NT	NT_11_0	8	28.6	10000000.00	Streptomycin	1/31/2020	PBS
+NT	NT_11_R	8	29.8	12000000.00	Streptomycin	1/31/2020	PBS
+-6	-6_11_0	8	23.9	14000000.00	Streptomycin	1/31/2020	Stool 1:10^6
+-6	-6_11_R	8	26	14000000.00	Streptomycin	1/31/2020	Stool 1:10^6
+-5	-5_11_20	8	27.9	340000.00	Streptomycin	1/31/2020	Stool 1:10^5
+-5	-5_11_2R	8	29.2	120000.00	Streptomycin	1/31/2020	Stool 1:10^5
+-4	-4_11_0	8	28.4	0.00	Streptomycin	1/31/2020	Stool 1:10^4
+-4	-4_11_L	8	26.2	0.00	Streptomycin	1/31/2020	Stool 1:10^4
+-4	-4_11_R	8	24	0.00	Streptomycin	1/31/2020	Stool 1:10^4
+-3	-3_11_30	8	25.3	0.00	Streptomycin	1/31/2020	Stool 1:10^3
+-3	-3_11_3L	8	25.2	0.00	Streptomycin	1/31/2020	Stool 1:10^3
+-3	-3_11_3R	8	27.5	0.00	Streptomycin	1/31/2020	Stool 1:10^3
+-2	-2_11_0	8	25.6	0.00	Streptomycin	1/31/2020	Stool 1:10^2
+-2	-2_11_R	8	25.8	0.00	Streptomycin	1/31/2020	Stool 1:10^2
+-1	-1_11_10	8	29.3	0.00	Streptomycin	1/31/2020	Stool 1:10
+-1	-1_11_1R	8	30.8	0.00	Streptomycin	1/31/2020	Stool 1:10
+NT	NT_11_0	9	28.6	188000000.00	Streptomycin	2/1/2020	PBS
+NT	NT_11_R	9	29.5	14000000.00	Streptomycin	2/1/2020	PBS
+-6	-6_11_0	9	24.2	16000000.00	Streptomycin	2/1/2020	Stool 1:10^6
+-6	-6_11_R	9	26.2	28000000.00	Streptomycin	2/1/2020	Stool 1:10^6
+-5	-5_11_20	9	27.8	560000.00	Streptomycin	2/1/2020	Stool 1:10^5
+-5	-5_11_2R	9	29.2	220000.00	Streptomycin	2/1/2020	Stool 1:10^5
+-4	-4_11_0	9	28.5	0.00	Streptomycin	2/1/2020	Stool 1:10^4
+-4	-4_11_L	9	25.9	0.00	Streptomycin	2/1/2020	Stool 1:10^4
+-4	-4_11_R	9	24	0.00	Streptomycin	2/1/2020	Stool 1:10^4
+-3	-3_11_30	9	25.5	0.00	Streptomycin	2/1/2020	Stool 1:10^3
+-3	-3_11_3L	9	25.3	0.00	Streptomycin	2/1/2020	Stool 1:10^3
+-3	-3_11_3R	9	27.7	0.00	Streptomycin	2/1/2020	Stool 1:10^3
+-2	-2_11_0	9	25.8	0.00	Streptomycin	2/1/2020	Stool 1:10^2
+-2	-2_11_R	9	26.1	0.00	Streptomycin	2/1/2020	Stool 1:10^2
+-1	-1_11_10	9	29.3	0.00	Streptomycin	2/1/2020	Stool 1:10
+-1	-1_11_1R	9	31.1	0.00	Streptomycin	2/1/2020	Stool 1:10
+NT	NT_11_0	10	28	6000000.00	Streptomycin	2/2/2020	PBS
+NT	NT_11_R	10	29.5	44000000.00	Streptomycin	2/2/2020	PBS
+-6	-6_11_0	10	24.4	40000000.00	Streptomycin	2/2/2020	Stool 1:10^6
+-6	-6_11_R	10	26	16000000.00	Streptomycin	2/2/2020	Stool 1:10^6
+-5	-5_11_20	10	27.4	360000.00	Streptomycin	2/2/2020	Stool 1:10^5
+-5	-5_11_2R	10	29	480000.00	Streptomycin	2/2/2020	Stool 1:10^5
+-4	-4_11_0	10	28.5	0.00	Streptomycin	2/2/2020	Stool 1:10^4
+-4	-4_11_L	10	25.8	0.00	Streptomycin	2/2/2020	Stool 1:10^4
+-4	-4_11_R	10	23.5	0.00	Streptomycin	2/2/2020	Stool 1:10^4
+-3	-3_11_30	10	25.2	0.00	Streptomycin	2/2/2020	Stool 1:10^3
+-3	-3_11_3L	10	25.4	0.00	Streptomycin	2/2/2020	Stool 1:10^3
+-3	-3_11_3R	10	27.7	0.00	Streptomycin	2/2/2020	Stool 1:10^3
+-2	-2_11_0	10	25.9	0.00	Streptomycin	2/2/2020	Stool 1:10^2
+-2	-2_11_R	10	26.2	0.00	Streptomycin	2/2/2020	Stool 1:10^2
+-1	-1_11_10	10	29.5	0.00	Streptomycin	2/2/2020	Stool 1:10
+-1	-1_11_1R	10	31	0.00	Streptomycin	2/2/2020	Stool 1:10
