@@ -43,18 +43,18 @@ dilution_colors <- c("#58b5e1", "#19477d", "#8b6fed", "#edb1ff", "#432ab7", "#ec
 alpha_data <- metadata %>% 
 	filter(#antibiotic == 'Streptomycin' |
 		#(antibiotic == 'Cefoperazone' & treatment %in% c(-1, -2)),
-		day %in% c(-9, 0, 10)) %>% 
+		day %in% c(-9, -2, 0, 10)) %>% 
 	left_join(select(alpha_df, group, sobs, invsimpson), 
 		by = c('sample_id' = 'group')) 
 
 beta_data <- beta_df %>% 
 	right_join(metadata %>% 
-			filter(day %in% c(-9, 0, 10)) %>% 
+			filter(day %in% c(-9, -2, 0, 10)) %>% 
 			select(sample_id, mouse_id_r = mouse_id, treatment, antibiotic,
 				day_r = day), 
 		by = c('rows' = 'sample_id')) %>% 
 	right_join(metadata %>% 
-			filter(day %in% c(-9, 0, 10)) %>% 
+			filter(day %in% c(-9, -2, 0, 10)) %>% 
 			select(sample_id, mouse_id_c = mouse_id, day_c = day), 
 		by = c('columns' = 'sample_id')) %>% 
 	filter(mouse_id_r == mouse_id_c,
