@@ -45,6 +45,8 @@ dilution_cfu_plot <- dilution_cfu_data %>%
 		geom_point(position = position_jitterdodge()) + 
 			scale_y_log10(breaks = c(10^2, 10^4, 10^6, 10^8),
 	  		labels = c('10^2', '10^4', '10^6', '10^8')) + # scale y axis log10 and label 10^x
+			scale_x_discrete(breaks = c('10^-1', '10^-2', '10^-3', '10^-4', '10^-5'),
+	  		labels = c('1:10', '1:10^2', '1:10^3', '1:10^4', '1:10^5')) + 
 		labs(x = NULL, y = expression(italic('C. difficile')~' CFU/g Feces'), shape = 'Treatment') + 
 		scale_color_manual(values = abx_color$color[1:2], breaks = abx_color$antibiotic[1:2]) + 
 		facet_grid(antibiotic~day) + 
