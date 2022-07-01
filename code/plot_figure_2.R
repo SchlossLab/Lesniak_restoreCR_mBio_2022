@@ -60,7 +60,8 @@ cfu_plot <- plot_data %>%
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_2.jpg'),
+ggsave(here('submission/Figure_2.tiff'),
   cfu_plot, 
-  height = 3.5, width = 4, unit = 'in')
+  height = 3.5, width = 4, unit = 'in',
+  compression = 'lzw')
 ###############################################################################

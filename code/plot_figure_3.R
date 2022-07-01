@@ -63,7 +63,7 @@ dilution_cfu_plot <- dilution_cfu_data %>%
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_3.jpg'),
+ggsave(here('submission/Figure_3.tiff'),
 	cowplot::plot_grid(
 		cowplot::plot_grid(NULL, NULL, 
 					 ncol = 1, 
@@ -72,5 +72,6 @@ ggsave(here('results/figures/Figure_3.jpg'),
 		dilution_cfu_plot,
 		nrow = 1, 
 		rel_widths = c(1, 20)),
-  height = 4, width = 5, unit = 'in')
+  height = 4, width = 5, unit = 'in',
+	compression = 'lzw')
 ###############################################################################

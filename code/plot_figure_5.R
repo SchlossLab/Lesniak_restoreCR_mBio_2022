@@ -100,7 +100,7 @@ strep_day0_colonization_OTU_plot <- plot_lefse('strep_day0_colonization_OTU') +
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_5.jpg'),
+ggsave(here('submission/Figure_5.tiff'),
   cowplot::plot_grid(cowplot::plot_grid(NULL, 
   						strep_day0_colonization_OTU_plot + 
   							labs(x = NULL, y = NULL, color = NULL) + 
@@ -127,5 +127,6 @@ ggsave(here('results/figures/Figure_5.jpg'),
                      ncol = 1,
                      rel_heights = c(8, 9, 26), 
                      labels = c('A', 'B', 'C')),
-  height = 9, width = 5, unit = 'in')
+  height = 9, width = 5, unit = 'in',
+	compression = 'lzw', bg = 'white')
 ###############################################################################
