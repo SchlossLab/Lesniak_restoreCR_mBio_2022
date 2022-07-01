@@ -54,7 +54,8 @@ individual_strep_plot <- metadata %>%
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_S1.jpg'),
+ggsave(here('submission/Figure_S1.tiff'),
 	individual_strep_plot,
-	height = 6, width = 4.5, unit = 'in')
+	height = 6, width = 4.5, unit = 'in',
+	compression = 'lzw')
 ###############################################################################

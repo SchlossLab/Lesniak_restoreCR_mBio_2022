@@ -192,7 +192,7 @@ dilution_correlation_plot <- dilution_correlation %>%
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_S2.jpg'),
+ggsave(here('submission/Figure_S2.tiff'),
 	cowplot::plot_grid(
 		cowplot::plot_grid(dilution_sobs_plot, dilution_invsimp_plot,
 	                     dilution_beta_plot, dilution_qpcr_plot, 
@@ -202,5 +202,6 @@ ggsave(here('results/figures/Figure_S2.jpg'),
 		cowplot::plot_grid(dilution_correlation_plot, labels = c('E')),
 		ncol = 1, 
 		rel_heights = c(3, 2)),
-	height = 8, width = 8, unit = 'in')
+	height = 8, width = 8, unit = 'in',
+	compression = 'lzw')
 ###############################################################################

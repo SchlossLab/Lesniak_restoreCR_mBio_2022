@@ -16,7 +16,7 @@ code/mothur/*
 *.qsub*
 mothur*logfile
 *temp*
-*.docx
+
 *.fastq
 exploratory/*
 *.jpg

@@ -1,0 +1,241 @@
+---
+csl: mbio.csl #Get themes at https://github.com/citation-style-language/styles
+fontsize: 12pt
+output:
+  word_document: default
+  pdf_document:
+    includes:
+      in_header: header.tex
+    keep_tex: yes
+bibliography: references.bib
+---
+
+
+```{r knitr_settings, eval=TRUE, echo=FALSE, cache=FALSE}
+library(knitr)
+library(readr)
+opts_chunk$set("tidy" = TRUE)
+opts_chunk$set("echo" = FALSE)
+opts_chunk$set("eval" = TRUE)
+opts_chunk$set("warning" = FALSE)
+opts_chunk$set("cache" = FALSE)
+
+inline_hook <- function(x){
+	print(x)
+
+	if(is.list(x)){
+		x <- unlist(x)
+	}
+
+	if(is.numeric(x)){
+		if(abs(x - round(x)) < .Machine$double.eps^0.5){
+			paste(format(x,big.mark=',', digits=0, scientific=FALSE))
+		} else {
+			paste(format(x,big.mark=',', digits=1, nsmall=1, scientific=FALSE))
+		}
+	} else {
+    	paste(x)      
+	}
+}
+knitr::knit_hooks$set(inline=inline_hook)
+```
+
+
+\pagenumbering{arabic}
+\linenumbers
+\doublespacing
+
+# Simplified fecal community transplant restores *Clostridioides difficile* colonization resistance to antibiotic perturbed murine communities
+
+
+\vspace{30mm}
+
+
+**Running title:** Fecal community transplant restores *Clostridioides difficile* colonization resistance
+
+
+\vspace{20mm}
+
+Nicholas A. Lesniak^1^, Sarah Tomkovich^1^, Andrew Henry^1^, Ana Taylor^1^, Joanna Colovas^1^, Lucas Bishop^1^, Kathryn McBride^1^, Patrick D. Schloss^1,$\dagger$^
+
+\vspace{40mm}
+
+$\dagger$ To whom correspondence should be addressed: pschloss@umich.edu
+
+1\. Department of Microbiology and Immunology, University of Michigan, Ann Arbor, MI 48109
+
+
+
+
+\newpage 
+
+
+## Abstract
+
+Fecal communities transplanted into individuals can eliminate recurrent *Clostridioides difficile* infection (CDI) with high efficacy. However, this treatment is only used once CDI becomes resistant to antibiotics or has recurred multiple times. We sought to investigate whether a fecal community transplant (FCT) pre-treatment could be used to prevent CDI altogether. We treated male C57BL/6 mice with either clindamycin, cefoperazone, or streptomycin, and then inoculated them with the microbial community from untreated mice before challenging with *C. difficile*. We measured colonization and sequenced the V4 region of the 16S rRNA gene to understand the dynamics of the murine fecal community in response to the FCT and *C. difficile* challenge. Clindamycin-treated mice became colonized with *C. difficile* but cleared it naturally and did not benefit from the FCT. Cefoperazone-treated mice became colonized by *C. difficile*, but the FCT enabled clearance of *C. difficile*. In streptomycin-treated mice, the FCT was able to prevent *C. difficile* from colonizing. Then we diluted the FCT and repeated the experiments. Cefoperazone-treated mice no longer cleared *C. difficile*. However, streptomycin-treated mice colonized with 1:10^2^ dilutions resisted *C. difficile* colonization. Streptomycin-treated mice that received a FCT diluted 1:10^3^, *C. difficile* colonized but later was cleared. In streptomycin-treated mice, inhibition of *C. difficile* was associated with increased relative abundance of a group of bacteria related to *Porphyromonadaceae* and *Lachnospiraceae*. These data demonstrate that *C. difficile* colonization resistance can be restored to a susceptible community with a FCT as long as it complements the missing populations.
+
+
+## Importance
+
+Antibiotic use, ubiquitous with the healthcare environment, is a major risk factor for *Clostridioides difficile* infection (CDI), the most common nosocomial infection. When *C. difficile* becomes resistant to antibiotics, a fecal microbiota transplant from a healthy individual can effectively restore the gut bacterial community and eliminate the infection. While this relationship between the gut bacteria and CDI is well established, there are no therapies to treat a perturbed gut community to prevent CDI. This study explored the potential of restoring colonization resistance to antibiotic-induced susceptible gut communities. We described the effect gut bacteria community variation has on the effectiveness of a fecal community transplant for inhibiting CDI. These data demonstrated that communities susceptible to CDI can be supplemented with fecal communities but the effectiveness depended on the structure of the community following the perturbation. Thus, a simplified bacterial community may be able to recover colonization resistance to patients treated with antibiotics.
+
+
+\newpage
+
+ 
+## Introduction
+
+The process by which gut bacteria prevent *Clostridioides difficile* and other pathogens from infecting and persisting in the intestine is known as colonization resistance [@Ducarmon2019]. Antibiotic-induced disruption of the gut bacterial community breaks down colonization resistance and is a major risk factor for *C. difficile* infection (CDI) [@Vardakas2016]. Gut bacteria inhibit *C. difficile* through the production of bacteriocins, modulation of available bile acids, competition for nutrients, production of short-chain fatty acids, and altering the integrity of the mucus layer [@Ducarmon2019]. After the initial CDI is cleared via antibiotics, patients can become reinfected. When CDI recurs more than once, the gut bacterial community from a healthy person typically is used to restore the gut community in the patient with recurrent CDI [@Cammarota2014]. Fecal microbiota transplant (FMT) is effective, but 10 - 20% of people that receive a FMT will still have another CDI [@Beran2022]. Additionally, transfer of a whole fecal community can incidentally transfer pathogens and cause adverse outcomes [@DeFilipp2019]. While the FMT is effective at curing recurrent CDI, it also has risks that must be considered.
+
+The benefits and risks of the FMT has led to the development of simplified bacterial communities to treat CDI. Synthetic communities are more defined than an FMT, making them easier to regulate as a drug. Tvede and Rask-Madsen were the first to successfully treat CDI with a community of isolates cultured from human feces [@Tvede1989]. More recently, Lawley *et al.* analyzed murine experiments and the fecal communities from patients with CDI to develop a synthetic community of six isolates to inhibit *C. difficile* colonization [@Lawley2012]. Simplified communities derived from human fecal communities, by methods such as selective isolation of spores or culturing bacteria, have cured recurrent CDI in their initial application [@Petrof2013; @Kao2021; @Khanna2016]. Although, a recent phase 2 trial of SER-109, a spore-based treatment, failed its phase 2 clinical trial [@McGovern2020], these therapies have the potential to offer the benefits of the FMT without the associated risks but are only used once a patient has had multiple CDIs. For these to be successful, we need a better approach to identify candidate bacterial populations. Recently, an autologous FMT was shown to be effective at restoring the gut microbiota in allogeneic hematopoietic stem cell transplantation patients and prevented future complications, such as systemic infections [@Taur2018]. It is unclear whether an treatment similar to an autologous FMT or simplified bacterial communities could be used to restore susceptible communities and prevent CDI [@Reigadas2021]. 
+
+Because FMT is often sufficient to restore colonization resistance to people with a current infection, we hypothesized that a fecal community should be sufficient to restore colonization resistance to an uninfected community. Therefore, we tested whether a fecal community transplant (FCT) pre-treatment would prevent or clear *C. difficile* colonization and how variation in susceptibility to *C. difficile* infection would affect the effectiveness of FCT pre-treatment. After testing the same FCT pre-treatment across different antibiotic-induced susceptibilities, we sought to determine whether diluted FCT pre-treatment could maintain the inhibition of *C. difficile* colonization and identify the bacterial populations associated with colonization resistance and clearance. 
+
+
+## Results
+
+**Effect of fecal transplant on *C. difficile* colonization was not consistent across antibiotic treatments.**  Our previous research demonstrated that when mice were perturbed with different antibiotics, there were antibiotic-specific changes to the microbial community that resulted in different levels of colonization and clearance of *Clostridioides difficile* infection [@Lesniak2021]. Because each of these treatments opened different niche spaces that *C. difficile* could fill, we hypothesized that the resulting community varied in the types of bacteria required to recover colonization resistance. To test the ability of the murine communities to recover colonization resistance, we treated conventionally raised SPF C57BL/6 mice with either clindamycin, cefoperazone, or streptomycin. After a short recovery period, the mice were given either phosphate-saline buffer (PBS) or a fecal community transplant via oral gavage (Figure 1). The fecal community was obtained from untreated mice. One day after receiving the FCT, the mice were challenged with 10^3^ *C. difficile* 630 spores. One day after the challenge, mice that were treated with either clindamycin or cefoperazone and received the FCT pre-treatment had similar amounts of *C. difficile* colony forming units (CFU) as those which received PBS. Among the clindamycin-treated mice, *C. difficile* colonization was cleared at similar rates regardless of whether they received the FCT or PBS pre-treatments (Figure 2). For cefoperazone-treated mice, *C. difficile* colonized all of the mice, but the mice that received the FCT pre-treatment cleared the infection (Figure 2). For the streptomycin-treated mice, the FCT pre-treatment resulted in either no detectable *C. difficile* colonization (8 of 14) or an infection that the community cleared within 5 days (Figure 2). For mice that would have normally had a persistent infection, the FCT enabled them to clear the infection and in the streptomycin-treated mice it was able to prevent infection entirely for some mice. 
+
+**Diluted fecal communities prevented colonization and promoted clearance for streptomycin-treated mice.** Next, we sought to test whether mice that received a diluted FCT pre-treatment could still benefit. To identify the minimally effective dilution, we repeated the same experimental design (Figure 1) with the FCT diluted serially down to 1:10^5^. Since the FCT pre-treatment had no detected effect in clindamycin-treated mice, we did not study those mice further. Cefoperazone-treated mice pre-treated with diluted FCT, 1:10 and lower, were not affected and were colonized throughout the experiment (Figure 3). Streptomycin-treated mice pre-treated with diluted FCT either regained colonization resistance or were enabled to clear *C. difficile*. The streptomycin-treated mice pre-treated with FCT as dilute as 1:10^3^ cleared *C. difficile*. The streptomycin-treated mice pre-treated with FCT as dilute as 1:10^2^ had no *C. difficile* CFU detected throughout the length of the experiment. While more mice pre-treated with lower FCT dilutions were colonized (FCT 6 of 14 were colonized, 1:10 10 of 12 were colonized, 1:10^2^ 10 of 14 were colonized), the colonized mice that received the lower dilutions were still able to clear *C. difficile* (Figure S1). Thus, the simplified fecal communities from the diluted FCT were able to restore colonization resistance and promote clearance of *C. difficile* in streptomycin-treated mice.
+
+The simplified fecal communities of the diluted FCT may have reduced abundance and membership. We compared the FCT communities to determine the differences between the dilutions. The most significant difference between the communities of the FCT and its dilutions was the quantity of the 16S rRNA gene, which decreased monotonically (Figure S2D). The FCT dilutions of 1:10^3^ to 1:10^5^) of the  had few samples with sufficient sequencing depth to provide bacterial community information. The FCT and its dilutions were not significantly different in either $\alpha$-diversity (number of operational taxonomic units (OTUs) (S~obs~) or Inverse Simpson) or $\beta$-diversity ($\theta$~YC~) (Figure S2A-C). Populations of *Acetatifactor*, *Enterobacteriaceae*, *Lactobacillus*, *Ruminococcaceae*, and *Turicibacter* correlated with the FCT dilution factor (Figure S2E). Overall, the abundance of the bacteria appeared to be largest difference between FCT and its dilutions.
+
+**Murine gut bacterial communities had not recovered their diversity by the time of *C. difficile* challenge.** To elucidate the effects of the fecal community dilution on the murine gut bacterial community and *C. difficile* infection, we sequenced the V4 region of the 16S rRNA gene from the fecal community. For the gut communities, in comparison to the initial community (day -9), FCT pre-treatment did not result in a significant recovery of diversity at the time of *C. difficile* challenge (day 0) for cefoperazone-treated mice (Figure S3) or streptomycin-treated mice (Figure 4). At the end of the experiment (day 10), the gut bacterial communities were more similar to their initial community in $\alpha$-diversity (number of OTUs (S~obs~) and Inverse Simpson diversity index) and $\beta$-diversity ($\theta$~YC~) diversity. The mice pre-treated with less dilute FCT were most similar to the initial community structure, whereas, the mice pre-treated with more dilute FCT resulted in little recovery of diversity, similar to the mice given PBS. Thus, the effect of FCT was not large enough at the time of *C. difficile* challenge to be detected in the community diversity but sufficient to affect *C. difficile* colonization. This would suggest the effect was driven by the most abundant populations.
+
+**Gut bacterial community members are differentially abundant in streptomycin-treated mice resistant to colonization.** Although there were no significant differences in diversity at the time of challenge, we next investigated how the individual bacterial populations were different in the uncolonized streptomycin-treated mice pre-treated with FCT. We used linear discriminant analysis (LDA) effect size (LEfSe) analysis to identify OTUs within the fecal bacterial communities from the streptomycin-treated mice that were differentially abundant between uncolonized and colonized mice. The antibiotic treatment significantly altered 99 OTUs (Figure S5), but on the day of *C. difficile* challenge only 7 OTUs were differentially abundant between colonized and uncolonized communities (Figure 5A). Communities resistant to *C. difficile* colonization had more abundant populations of OTUs related to *Akkermansia*, *Clostridiales*, *Olsenella*, and *Porphyromonadaceae* and less abundant populations of an OTU related to *Enterobacteriaceae*. Thus, a small portion of OTUs, relative to the changes due to streptomycin treatment, were differentially abundant in mice that resisted *C. difficile* colonization compared to those that were colonized.
+
+**Murine gut bacterial communities that cleared *C. difficile* colonization were more similar to the initial community.** To better understand the differences in streptomycin-treated murine fecal community that contributed to *C. difficile* clearance, we compared the communities that cleared *C. difficile* to those that did not at the time of challenge and 10 days post infection. Communities from mice that cleared colonization were more similar to their initial community at the end of the experiment than the mice that remained colonized (Figure S4). At the time of *C. difficile* challenge, 9 OTUs were differentially abundant between communities that remained colonized to those that cleared colonization (Figure 5B). Communities that cleared *C. difficile* colonization had more abundant populations of OTUs related to *Porphyromonadaceae* and *Lachnospiraceae* and less abundant populations of OTUs related to *Acetatifactor*, *Lachnospiraceae*, *Olsenella*, *Porphyromonadaceae*, and *Salmonella*. At the end of the experiment, 29 of the 34 differentially abundant OTUs were more abundant in the mice that were able to clear the colonization (Figure 5C). The relative abundance of OTUs related to *Acetatifactor*, *Anaeroplasma*, *Enterococcus*, *Lachnospiraceae*, *Lactobacillus*, *Porphyromonadaceae*, and *Ruminococcaceae* were higher in communities that cleared, recovering in abundance from the streptomycin treatment. Multiple OTUs related to *Lachnospiraceae* and *Porphyromonadaceae* (N = 14 and N = 5, respectively) were significant and accounted for greater portions of the community (more than 10%). However one *Porphyromonadaceae* population (OTU 5) and two *Lachnospiraceae* related populations (OTU 40 and 95) were more abundant in the mice that remain colonized. Thus, the more the gut bacterial members returned to their initial abundance, there was a greater likelihood of clearing *C. difficile*. 
+
+**Negative associations dominated the interactions between the gut bacterial community and *C. difficile* in  streptomycin-treated mice.** In streptomycin-treated mice, pre-treatment with FCT and its dilutions had different effects on the bacterial community members which resulted in different community relative abundance and *C. difficile* colonization dynamics. We quantified the relationships occurring throughout this experiment using SPIEC-EASI (sparse inverse covariance estimation for ecological association inference) to construct a conditional independence network. Here, we focused on the associations of the *C. difficile* subnetwork (Figure 6). *C. difficile* CFU had positive associations with populations of OTUs related to *Enterobacteriaceae* (OTU 4) and *Peptostreptococcaceae* (OTU 19). OTUs related to *Clostridiales* (OTU 27), *Lachnospiraceae* (OTUs 15, 51, and 83), and *Porphyromonadaceae* (OTUs 23, 25, and 29) had negative associations with *C. difficile*, as well as the OTUs related to *Enterobacteriaceae*, and *Peptostreptococcaceae*. Overall, the majority of the associations between *C. difficile* and the gut bacterial community in streptomycin-treated mice were negative. This suggests this subset of the community may be driving the inhibition of *C. difficile* in streptomycin-treated communities.
+
+## Discussion
+
+Transplanting the fecal community from untreated mice to antibiotic-treated mice prior to being challenged with *C. difficile* varied in effectiveness based on the antibiotic treatment. This indicated that FCT pre-treatment can prevent *C. difficile* colonization in an antibiotic-specific manner. Additionally, by diluting the FCT we were able to narrow the community changes responsible for the effect to the most abundant OTUs. Overall, these results show that a simplified fecal community can assist a perturbed microbiota in preventing or resisting *C. difficile* colonization but the effect was dependent on the antibiotic that was given.  
+
+By diluting the FCT we were able to narrow the definition of the minimal community features that restored colonization resistance. Bacterial interactions with *C. difficile* were associated with the identity, abundance, and functions of adjacent bacteria. Ghimire *et al.* recently showed individual species that inhibited *C. difficile* in co-culture but when other inhibitory species were added the overall effect on *C. difficile* was changed, in some cases to a increased *C. difficile* growth [@Ghimire2019]. Based on these observations from their bottom-up approach, it is unclear how more complex combinations would affect the inhibition of *C. difficile*. So instead, we sought to find an inhibitory community using a top-down approach and begin with an inhibitory community. In a recent top-down approach, Auchtung *et al.* recently developed a set of simplified communities from human fecal communities that were grown in minibioreactor arrays and tested for inhibition first *in vitro* then in a mouse model [@Auchtung2020]. They found four simplified communities that were able to reduce *C. difficile* colonization but with varied effect in a mouse model with the same gut microbiota. One way they simplified the community was through diluting the initial fecal sample. In our experiments, we began with a fresh whole fecal community to first determine if inhibition was possible. In the conditions which *C. difficile* was inhibited, with cefoperazone and streptomycin, we diluted the FCT to determine the minimal community which maintained inhibition. Cefoperazone-treated mice were unable to maintain inhibition of *C. difficile* with diluted FCT pre-treatments and *C. difficile* remained colonized. Streptomycin-treated mice were able to maintain inhibition with diluted FCT pre-treatment. While the diluted FCTs had similar diversity and bacterial abundances, the differences in effect on *C. difficile* revealed the minimal changes associated with either colonization resistance or clearance.
+
+We previously hypothesized that mice treated with either clindamycin, cefoperazone, or streptomycin would not have the same bacterial community changes associated with *C. difficile* clearance [@Lesniak2021]. In that set of experiments, the dose of the antibiotic was varied to titrate changes to the community and determine what changes allow *C. difficile* to colonize and then be spontaneously cleared. We observed antibiotic-specific changes associated with *C. difficile* clearance. The data presented here complement those observations. For clindamycin-treated mice, there was no difference in colonization, clearance or relative abundance between PBS and FCT pre-treatment. *C. difficle* had similar colonization dynamics. It is possible that there was insufficient time for the FCT to engraft. However, when we added more time between clindamycin treatment and *C. difficile* challenge, *C. difficile* was unable colonize (data not shown). Therefore, clindamycin-treated mice appeared to have been naturally recovering inhibition to *C. difficile*, which was unaffected by the FCT pre-treatment. For cefoperazone-treated mice, the FCT pre-treatment enabled the gut microbiota to eliminate the colonization but only in its most concentrated dose. This observation supports our previous report, indicating that the cefoperazone-treated community is more sensitivity to the amount of FCT it receives since cefoperazone reduced many bacterial groups and associations (Figure S6). As we previously hypothesized, streptomycin-treated mice were enabled to clear with a subset of the community, with the FCT pre-treatment diluted 1:10^3^. Since we titrated the FCT dilutions, we could compare the bacterial communities of the mice which gained the ability to clear *C. difficile* to the mice that received the next dilution which could not to elucidate the minimal relative abundance differences. In agreement with previous studies, OTUs related to *Lachnospiraceae*, *Porphyromonadaceae*, and *Ruminococcaceae* increased with the clearance of *C. difficle* in the streptomycin-treated mice [@Lesniak2021; @Tomkovich2020; @Tomkovich2021; @Buffie2015; @Reeves2012; @Leslie2019]. These data agree with our previous hypothesis that a simplified fecal community would only be able to promote clearance of *C. difficile* in streptomycin-treated mice.
+
+In addition to clearing *C. difficile*, a simplified fecal community restored colonization resistance to streptomycin-treated mice. Mice that received FCT pre-treatment as dilute as 1:10^2^ were not colonized to a detectable level. While restoring colonization resistance is not novel [@NagaoKitamoto2020], here we have shown that the restoration of colonization resistance is dependent on the community perturbation and the fecal community being transplanted. As we identified community members associated with clearance, OTUs related to *Akkermansia*, *Olsenella*, and *Porphyromonadaceae* were more abundant and an OTU related to *Enterobacteriaceae* was less abundant at the time of *C. difficile* challenge. *Enterobacteriaceae* has been associated with *C. difficile* colonization and inflammation [@Byndloss2017; @Winter2013; @Lesniak2021]. Larger populations of *Akkermansia* were associated with preventing colonization, which we had previously observed, potentially indicating the maintenance of a protective mucus layer [@Lesniak2022; @Lesniak2021; @Nakashima2021; @Stein2013]. Increased populations of a select set of OTUs related to *Porphyromonadaceae* were also more abundant in mice that were resistant to colonization. *Porphyromonadaceae* may be inhibiting *C. difficile* via buytrate and acetate production, which has been associated with successful FMT treatments [@Flynn2018; @Guilloux2021; @Seekatz2018]. Different populations of OTUs associated with *Porphyromonadaceae* were associated with colonization resistance than with colonization clearance. These colonization resistance-associated OTUs (OTUs 8, 25 and 29) may have OTU-specific functions or dependent abundances of memebrs of the community, such as *Akkermansia* and *Enterobacteriaceae*. With our top-down approach, we reduced the number of gut bacterial community members that were associated with colonization resistance in streptomycin-treated mice.
+
+We have demonstrated that a simplified bacterial community can restore colonization resistance but the effect of the community and the bacteria that colonized was dependent on the specific changes to the community that were caused by each antibiotic. When transplanting the fecal community into antibiotic-induced susceptible mice, only mice treated with streptomycin were able to restore colonization resistance. Previous studies that have identified simplified communities in a murine model using a homogeneous gut microbiota with a bottom-up approach [@Buffie2015; @Lawley2012]. Treatments supplementing the gut microbiota would benefit from being tested in different communities susceptible to CDI. Further research is necessary to characterize the specific niche spaces *C. difficile* of susceptibilities communities and the specific requirements fill those spaces. Then it may be possible to identify people with gut microbiota that are susceptible to CDI and develop targeted simplified bacterial communities to recover colonization resistance and reduce the risk of CDI.
+
+
+## Materials and Methods
+
+**Animal care.** Mice used in experiments were 6- to 13-week old conventionally reared SPF male C57BL/6 mice obtained from a single breeding colony at the University of Michigan. During the experiment, mice we housed with two or three mice per cage. All murine experiments were approved by the University of Michigan Animal Care and Use Committee (IACUC) under protocol number PRO00006983.
+
+**Antibiotic administration.** Mice were given either cefoperazone, clindamycin, or streptomycin. Cefoperazone (0.5 mg/ml) and streptomycin (5 mg/ml) were administered via drinking water for 5 days, beginning 9 days prior to *C. difficile* challenge. Antibiotic water was replaced every two days. Clindamycin (10 mg/kg) was injected into the intraperitoneal space, 2 days prior to challenge with *C. difficile*. All antibiotics were filter sterilized with a 0.22 $\mu$m syringe filter prior to use.
+
+**Fecal community transplants.** Fecal pellets were collected from similar aged C57BL/6 mice not being used in an experiment the day of the fecal community transplants. 15-20 pellets were collected and weighed. The fecal pellets were homogenized weight per weight in phosphate-saline buffer (PBS) containing 15% glycerol (fecal community transplant, FCT) in anaerobic conditions. The FCT was serially diluted in PBS containing 15% glycerol down to 1:10^5^ fecal dilution and aliquoted into tubes for gavaging into mice. One set of aliquots were frozen at -80$^\circ$C to be used the following day for the cefoperazone and streptomycin experiments. Frozen aliquots were thawed at 37$^\circ$C for 5 minutes prior to being used. All fecal community dilutions were centrifuged at 7500 RPM for 60 seconds. Mice were inoculated with 100 uL of the fecal dilution oral via a 21 gauge gavage needle. Fecal community transplants were administered from most dilute to least, which began with mice receiving PBS and finished with mice receiving FCT. Aliquots were frozen at -80$^\circ$C after use for sequencing. These experiments were repeated 8 times with a different starting source each time. 
+
+**16S rRNA quantitative real-time PCR.** Quantitative analysis of 16S rRNA in fecal community dilutions used for FCT was carried out using quantitative real-time PCR using primers and cycler conditions specified previously [@Rinttila2004]. Reaction volumes were prepared using 6 uL of SYBRTM Green PCR Master Mix (Applied Biosciences Ref 4344463), 1 uL each forward and reverse primer, and 2 uL sample DNA template. All qPCR reactions were run on a LightCycler\textregistered \ 96 (Roche Ref 05815916001) using instrument-specific plates and seals. 
+
+***C. difficile* challenge.** For experiments using streptomycin or cefoperazone, mice were given untreated drinking water for 96 hours before challenging with *C. difficile* strain 630$\Delta$erm spores. For experiments using clindamycin, mice were given untreated drinking water for 48 hours the time of the intraperitoneal injection and being challenged with *C. difficile* strain 630$\Delta$erm spores. *C. difficile* spores were aliquoted from a single spore stock stored at 4$^\circ$C. Spore concentration was determined two days prior to the day of challenge [@Sorg2009]. Mice were inoculated with 10^3^ *C. difficile* spores via oral gavage. After inoculating the mice, remaining spore solution was serially diluted and plated to confirm the spore concentration.
+
+**Sample collection.** Fecal samples were collected prior to administering antibiotics, after antibiotics were removed, prior to *C. difficile* challenge and on each of the 10 days post infection. Approximately 15 mg of each fecal sample was collected and weighed for plating *C. difficile* colony forming units (CFU) and the remaining sample was frozen at -80$^\circ$C for later sequencing. The weighed fecal samples were anaerobically serially diluted in PBS, plated on TCCFA plates, and incubated at 37$^\circ$C for 24 hours. The resultant colonies were enumerated to determine the *C. difficile* CFUs [@Winston2016].
+
+**DNA sequencing.** Total bacterial DNA was extracted from the frozen samples by the MOBIO PowerSoil-htp 96-well soil DNA isolation kit. We amplified the 16S rRNA gene V4 region and the amplicons were sequenced on an Illumina MiSeq as described previously [@Kozich2013].
+
+**Sequence curation.** Sequences were processed using mothur (v.1.44.1) [@Kozich2013; @Schloss2009]. We used a 3% dissimilarity cutoff to group sequences into operational taxonomic units (OTUs) and a naive Bayesian classifier with the Ribosomal Database Project training set (version 16) to assign taxonomic classifications to OTUs [@Wang2007]. We sequenced a mock community of a known 16S rRNA gene sequences and composition. We processed this mock community in parallel with our samples to determine the error rate for our sequence curation, which resulted in an error rate of 0.029%.
+
+**Statistical analysis and modeling.** We calculated diversity metrics in mothur. For $\alpha$-diversity comparisons, we calculated the number of OTUs (S~obs~) and the Inverse Simpson diversity index. For $\beta$-diversity comparisons, we calculated dissimilarity matrices based on metric of Yue and Clayton ($\theta$~YC~) [@Yue2005]. We rarefied samples to 2,480 sequences per sample to limit uneven sampling biases. OTUs were subsampled to 2,480 counts per sample. We tested for differences in relative abundance between outcomes with LEfSe in mothur. All other statistical analyses and data visualization was completed in R (v4.0.5) with the tidyverse package (v1.3.1). Pairwise comparisons of $\alpha$-diversity (S~obs~ and Inverse Simpson), $\beta$-diversity ($\theta$~YC~), were calculated by pairwise Wilcoxon rank sum test. Correlations between bacterial genera and fecal community dilution were calculated using the Spearman correlation. *P* values were corrected for multiple comparisons with a Benjamini and Hochberg adjustment for a type I error rate of 0.05 [@Benjamini1995]. For streptomycin experiments, conditional independence networks were calculated from the day 1 through 5 samples of all mice using SPIEC-EASI (sparse inverse covariance estimation for ecological association inference) methods from the SpiecEasi R package after optimizing lambda to 0.001 with a network stability between 0.045 and 0.05 (v1.0.7) [@Kurtz2015].
+
+**Code availability.** Scripts necessary to reproduce our analysis and this paper are available in an online repository (https://github.com/SchlossLab/Lesniak_restoreCR_XXXX_2022).
+
+**Sequence data accession number.** All 16S rRNA gene sequence data and associated metadata are available through the Sequence Read Archive via accession SRP373949.
+
+## Acknowledgements
+
+This work was supported by several grants from the National Institutes for Health R01GM099514, U19AI090871, U01AI12455, and P30DK034933. Additionally, NAL was supported by the Molecular Mechanisms of Microbial Pathogenesis training grant (NIH T32 AI007528).
+The funding agencies had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+
+## Author contributions
+
+Conceptualization: N.A.L., S.T., P.D.S.; Data curation: N.A.L., L.B., K.M.; Formal analysis: N.A.L., ; Investigation: N.A.L., S.T., A.H., A.T., J.C., L.B., K.M., P.D.S.; Methodology: N.A.L., S.T., P.D.S.; Resources: N.A.L., S.T., L.B., K.M., P.D.S.; Software: N.A.L.; Visualization: N.A.L., P.D.S.; Writing - original draft: NAL; Writing - review & editing: N.A.L., S.T., A.H., A.T., J.C., L.B., K.B., P.D.S.; Funding acquisition: P.D.S.; Project administration: P.D.S.; Supervision: P.D.S.
+
+\newpage
+
+## References
+
+<div id="refs"></div>
+
+\newpage
+
+![](../results/pictures/experiment_schematic.jpg)
+
+**Figure 1. Mouse experiment timeline.** Mice were given water with cefoperazone (0.5 mg/ml) or streptomycin (5 mg/ml) for 5 days. The mice were returned to untreated water for the remainder of the experiment. Two days after the antibiotic water was removed, mice were orally gavaged 100 $\mu$l of PBS or fecal community, once a day for two days. The following day, the mice were challenged with 10^3^ *C. difficile* 630 spores. Alternatively, mice were given an intraperitoneal injection of clindamycin (10 mg/kg) 2 days prior to *C. difficile* infection. 24 hours later, mice were orally gavaged with 100 $\mu$l of PBS or fecal community. The following day, the mice were challenged with 10^3^ *C. difficile* 630 spores. Fecal pellets were collected prior to treatment (day -9 for cefoperazone/streptomycin, day -2 for clindamycin), cessation of antibiotics (day -2 for cefoperazone/streptomycin, day -1 for clindamycin), prior to *C. difficile* infection (day 0), and each of the following 10 days.
+
+
+\hfill\break
+
+![](../results/figures/figure_2.jpg)
+
+**Figure 2. Fecal community transplant inhibited *C. difficile* colonization for mice treated with cefoperazone or streptomycin.** *C. difficile* CFU per gram of feces for mice treated with clindamycin (red points), cefoperazone (blue points), or streptomycin (orange points). Mice were orally gavaged either PBS (open circles) or FCT (fecal community transplant, filled circles) prior to the *C. difficile* infection. Each point represents an individual mouse. LOD = limit of detection.
+
+
+\hfill\break
+
+![](../results/figures/figure_3.jpg)
+
+**Figure 3. Diluted FCT inhibited *C. difficile* colonization for mice treated with streptomycin.**  *C. difficile* CFU per gram of feces for mice treated with cefoperazone (blue points) or streptomycin (orange points). Mice were orally gavaged with a dilution of FCT (1:10 to 1:10^5^) prior to the *C. difficile* infection at (A) one day post *C. difficile* infection (dpi) and (B) 10 dpi. Each point represents an individual mouse. LOD = limit of detection.
+
+
+\hfill\break
+
+![](../results/figures/figure_4.jpg)
+
+**Figure 4. Diversity of murine gut bacterial community had not recovered at the time of *C. difficile* infection in streptomycin-treated mice.** $\alpha$-diversity, measured by S~obs~ (A) and Inverse Simpson (B), prior to beginning antibiotic treatment (day -9), after fecal community transplant on the day of *C. difficile* challenge (day 0) and at the end of the experiment (day 10). (C) $\beta$-diversity, measured by $\theta$~YC~, distance between community structures on day 0 or 10 compared to the community prior to antibiotic treatment (day -9) community of that individual. Data are grouped by the transplant received, undiluted fecal community (FCT), diluted fecal community (1:10^1^-1:10^5^), or PBS. Points are median values and lines represent the interquartile range.
+
+
+\hfill\break
+
+![](../results/figures/figure_5.jpg)
+
+**Figure 5. Bacterial community OTUs differentially abundant in streptomycin-treated mice which resisted or cleared colonization.** Murine gut bacterial community OTUs that were significantly different by LEfSe analysis. OTUs from streptomycin-treated mice at the time of *C. difficile* challenge (day 0) which were differentially abundant between (A) mice that were colonized (dark green) and those that were not (no detectable CFU throughout the experiment, bright green) or (B) mice that remained colonized (dark green) and those that cleared colonization (CFU reduced to below the limit of detection by the end of the experiment, faint green). (C) OTUs from streptomycin-treated mice at the end of the experiment (day 10) which were differentially abundant between mice that remained colonized (dark green) and those that cleared colonization (CFU reduced to below the limit of detection by the end of the experiment, faint green). Points are median values and lines represent the interquartile range. Dashed vertical line is the limit of detection. OTUs ordered alphabetically. * indicates that the OTU was unclassified at lower classification rank.  
+
+\hfill\break
+
+![](../results/figures/figure_6.jpg)
+
+**Figure 6. Streptomycin-treated murine fecal community associations with *C. difficile*.** Network constructed with SpiecEasi from the OTU relative abundances and *C. difficile* CFU data from 1 through 5 days post *C. difficile* infection. Red lines represent negative associations and blue lines indicate positive associations. *C. difficile* is based on CFU counts and *Peptostreptococcaceae* (OTU 19), the OTU most closely related to *C. difficile*, is based on sequence counts. Only *C. difficile* subnetwork shown.
+
+
+\hfill\break
+
+![](../results/figures/figure_S1.jpg){ width=65% height=65% }
+
+**Figure S1. *C. difficile* colonization dynamics in streptomycin-treated mice across all prophylactic transplant treatments.** *C. difficile* CFU per gram of feces for streptomycin-treated mice orally gavaged PBS, fecal community transplant (FCT), or diluted FCT (1:10-1:10^5^) prior to the *C. difficile* infection. Each semi-transparent line represents an individual mouse. Mice challenged with 10^3^ *C. difficile* 630 spores on day 0. Lines grouped by the transplant treatment received. LOD = limit of detection.
+
+
+\hfill\break
+
+![](../results/figures/figure_S2.jpg){ width=60% height=60% }
+
+**Figure S2. Diversity and quantification of fecal community dilutions used for prophylactic transplants in antibiotic-treated mice.** (A-C) Diversity of fecal community dilutions. $\alpha$-diversity, measured by (A) S~obs~ and (B) Inverse Simpson for undiluted fecal community (FCT) and diluted fecal communities (1:10-1:10^5^). Points are individual samples. (C) $\beta$-diversity, measured by $\theta$~YC~, community structure of feces collected from untreated mice, undiluted fecal community (FCT), and diluted fecal communities (1:10-1:10^5^) compared to untreated feces. Points are median values and lines represent the interquartile range. (D) Cq values for qPCR of FCT and its dilutions for eubacterial 16S rRNA gene. Points are median values and lines represent the interquartile range. (E) Relative abundance of bacterial taxonomic groups that significantly correlate with fecal community dilutions (FCT-1:10^3^) by Spearman correlation. Points are individual mice. * indicates that the bacterial taxonomic group was unclassified at lower classification rank.  
+
+
+\hfill\break
+
+![](../results/figures/figure_S3.jpg){ width=55% height=55% }
+
+**Figure S3. Diversity of murine gut bacterial community was not recovered at the time of *C. difficile* infection in cefoperazone-treated mice.** Diversity changes through experiments with cefoperazone-treated mice. $\alpha$-diversity, measured by (A) S~obs~ and (B) Inverse Simpson, prior to beginning antibiotic treatment (day -9), after fecal community transplant on the day of *C. difficile* infection (day 0) and at the end of the experiment (day 10). (C) $\beta$-diversity, measured by $\theta$~YC~, distance between community structures on day 0 or 10 compared to the community prior to antibiotic treatment (day -9) community of that individual. Data are grouped by the transplant received, undiluted fecal community (FCT), diluted fecal community (1:10^1^-1:10^5^), or PBS. Points are individual mice.
+
+\hfill\break
+
+![](../results/figures/figure_S4.jpg){ width=50% height=50% }
+
+**Figure S4. Gut bacterial community of streptomycin-treated mice that cleared colonization were more similar to their initial community.** Diversity differences by outcome in streptomycin-treated mice. $\beta$-diversity, measured by $\theta$~YC~, distance between community structures on day 0 or 10 compared to the community prior to antibiotic treatment (day -9) community of that individual. Data are grouped by the outcome, cleared colonization (faint green) or remain colonized (dark green). Points are median values and lines represent the interquartile range. * indicates significant difference by Wilcoxon rank sum test with Bonferroni correction.
+
+\hfill\break
+
+![](../results/figures/figure_S5.jpg){ width=65% height=65% }
+
+**Figure S5. Murine gut bacterial community OTUs differentially abundant with streptomycin treatment.** Murine gut bacterial community OTUs that were significantly different by LEfSe analysis between untreated mice (Initial, black) and after 5 days of water with streptomycin (5 mg/ml) and 2 days of untreated water (After streptomycin, orange). Large bold points represent the group median. Small, semi-transparent points represent an individual mouse. Gray arrow indicates the direction the relative abundance shifted with the streptomycin treatment. Left plot displays OTUs with a median relative abundance greater than 0.1%, the OTUs lower are displayed in the right plot. Dashed vertical line is the limit of detection. OTUs ordered alphabetically. * indicates that the OTU was unclassified at lower classification rank.  
+
+
+\hfill\break
+
+![](../results/figures/figure_S6.jpg){ width=70% height=70% }
+
+**Figure S6. Murine gut bacterial community OTUs of cefoperazone-treated mice at the time of challenge.** Murine gut bacterial community OTUs that were present in at least one sample at the time of *C. difficile* challenge (day 0). Mice were pre-treated with either fecal community transplant (FCT, open circles) or FCT diluted 1:10 (filled circles). Points are individual samples. Dashed vertical line is the limit of detection. OTUs ordered alphabetically. * indicates that the OTU was unclassified at lower classification rank.  

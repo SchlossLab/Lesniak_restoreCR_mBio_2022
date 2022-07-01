@@ -85,7 +85,8 @@ cef_shared_plot <- cef_shared_plot_data %>%
 ###############################################################################
 # load data
 ###############################################################################
-ggsave(here('results/figures/Figure_S6.jpg'),
+ggsave(here('submission/Figure_S6.tiff'),
 	cef_shared_plot,
-	height = 8, width = 5, unit = 'in')
+	height = 8, width = 5, unit = 'in',
+	compression = 'lzw')
 ###############################################################################

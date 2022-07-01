@@ -73,7 +73,8 @@ cdiff_graph <- graph_network(network_data, 'target')
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here::here('results/figures/Figure_6.jpg'),
+ggsave(here::here('submission/Figure_6.tiff'),
 	cdiff_graph,
-	height = 4, width = 5, unit = 'in')
+	height = 4, width = 5, unit = 'in',
+	compression = 'lzw')
 ###############################################################################

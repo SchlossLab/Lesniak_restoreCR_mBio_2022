@@ -112,10 +112,11 @@ strep_antibiotic_low_plot <- plot_data %>%
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_S5.jpg'),
+ggsave(here('submission/Figure_S5.tiff'),
 	cowplot::plot_grid(strep_antibiotic_high_plot,
 		strep_antibiotic_low_plot,
 		nrow = 1),
-	height = 11, width = 10, unit = 'in')
+	height = 11, width = 10, unit = 'in',
+	compression = 'lzw')
 
 ###############################################################################

@@ -43,18 +43,18 @@ dilution_colors <- c("#58b5e1", "#19477d", "#8b6fed", "#edb1ff", "#432ab7", "#ec
 alpha_data <- metadata %>% 
 	filter(#antibiotic == 'Streptomycin' |
 		#(antibiotic == 'Cefoperazone' & treatment %in% c(-1, -2)),
-		day %in% c(-9, 0, 10)) %>% 
+		day %in% c(-9, -2, 0, 10)) %>% 
 	left_join(select(alpha_df, group, sobs, invsimpson), 
 		by = c('sample_id' = 'group')) 
 
 beta_data <- beta_df %>% 
 	right_join(metadata %>% 
-			filter(day %in% c(-9, 0, 10)) %>% 
+			filter(day %in% c(-9, -2, 0, 10)) %>% 
 			select(sample_id, mouse_id_r = mouse_id, treatment, antibiotic,
 				day_r = day), 
 		by = c('rows' = 'sample_id')) %>% 
 	right_join(metadata %>% 
-			filter(day %in% c(-9, 0, 10)) %>% 
+			filter(day %in% c(-9, -2, 0, 10)) %>% 
 			select(sample_id, mouse_id_c = mouse_id, day_c = day), 
 		by = c('columns' = 'sample_id')) %>% 
 	filter(mouse_id_r == mouse_id_c,
@@ -190,35 +190,38 @@ beta_diff_plot <- beta_data %>%
 ###############################################################################
 #  save plot
 ###############################################################################
-ggsave(here('results/figures/Figure_4.jpg'),
+ggsave(here('submission/Figure_4.tiff'),
 	cowplot::plot_grid(
 		strep_plots$sobs_plot,
 		cowplot::plot_grid(NULL, strep_plots$invsimpson_plot,
 			nrow = 1, rel_widths = c(.26, 10)),
 		cowplot::plot_grid(NULL, strep_plots$beta_plot + 
 				theme(legend.position = 'none'),
-			nrow = 1, rel_widths = c(2.2, 10)),
+			nrow = 1, rel_widths = c(1.35, 10)),
 		cowplot::plot_grid(get_legend(strep_plots$beta_plot)),
 		ncol = 1,
 		rel_heights = c(6.4, 6.4, 7, 1.4),
 		labels = c('A', 'B', 'C', '')),
-	height = 7, width = 3.75, unit = 'in')
+	height = 7, width = 3.75, unit = 'in',
+	compression = 'lzw', bg = 'white')
 
-ggsave(here('results/figures/Figure_S3.jpg'),
+ggsave(here('submission/Figure_S3.tiff'),
 	cowplot::plot_grid(
 		cef_plots$sobs_plot,
 		cowplot::plot_grid(NULL, cef_plots$invsimpson_plot,
 			nrow = 1, rel_widths = c(.26, 10)),
 		cowplot::plot_grid(NULL, cef_plots$beta_plot + 
 				theme(legend.position = 'none'), 
-			nrow = 1, rel_widths = c(2.2, 10)),
+			nrow = 1, rel_widths = c(1.35, 10)),
 		cowplot::plot_grid(get_legend(cef_plots$beta_plot)),
 		ncol = 1,
 		rel_heights = c(6.4, 6.4, 7, 1.4),
 		labels = c('A', 'B', 'C', '')),
-	height = 7, width = 3.75, unit = 'in')
+	height = 7, width = 3.75, unit = 'in',
+	compression = 'lzw', bg = 'white')
 
-ggsave(here('results/figures/Figure_S4.jpg'),
+ggsave(here('submission/Figure_S4.tiff'),
 	beta_diff_plot,
-	height = 3, width = 4, unit = 'in')
+	height = 3, width = 4, unit = 'in',
+	compression = 'lzw', bg = 'white')
 ###############################################################################
