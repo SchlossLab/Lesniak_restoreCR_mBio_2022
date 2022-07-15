@@ -9,8 +9,14 @@
 #	data/process/final.taxonomy.tidy.tsv
 #
 # output files:
-#	data/process/lefse/XXXX.lefse_summary
-#	data/process/lefse/XXXX.design
+#	data/process/lefse/strep_day0_clearance_OTU.0.03.lefse_summary
+#	data/process/lefse/strep_day0_clearance_OTU.design
+#	data/process/lefse/strep_day10_clearance_OTU.0.03.lefse_summary
+#	data/process/lefse/strep_day10_clearance_OTU.design
+#	data/process/lefse/strep_day0_colonization_OTU.0.03.lefse_summary
+#	data/process/lefse/strep_day0_colonization_OTU.design
+#	data/process/lefse/strep_antibiotic.0.03.lefse_summary
+#	data/process/lefse/strep_antibiotic.design
 #
 ###############################################################################
 # setup environment

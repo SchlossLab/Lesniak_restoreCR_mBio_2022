@@ -6,17 +6,17 @@
 # command from within mothur.
 #
 # Dependencies...
-# * fastq files stored in data/raw
+# * fastq files stored in data/mothur
 #
 # Output...
-# * data/raw/restore_cr.files
+# * data/mothur/restore_cr.files
 #
 ################################################################################
 
 library(tidyverse)
 
 # get the list of fastq file names
-fastqs <- list.files("data/raw/", pattern="*.fastq.gz$")
+fastqs <- list.files("data/mothur/", pattern="*.fastq.gz$")
 
 # create a sample column using the samples cage, mouse ear tag and day to match meta
 files_df <- tibble(seq_id = fastqs) %>% 
@@ -27,4 +27,4 @@ files_df <- tibble(seq_id = fastqs) %>%
 	pivot_wider(names_from = 'seq_R', values_from = 'seq_id') %>% # spread fastqs into R1/R2 columns
 	select(group, R1, R2)
 
-write_tsv(files_df, "data/raw/restore_cr.files", col_names = F)
+write_tsv(files_df, "data/mothur/restore_cr.files", col_names = F)

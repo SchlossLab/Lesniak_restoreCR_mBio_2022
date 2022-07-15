@@ -5,6 +5,18 @@
 # 	plot - alpha and beta for dilutions
 #		qpcr of dilutions
 #
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#	data/mothur/sample.final.0.03.subsample.shared
+#	data/mothur/sample.final.groups.ave-std.summary
+#	data/mothur/sample.final.thetayc.0.03.lt.ave.dist
+#	data/process/restore_taxonomy_clean.tsv
+#	data/raw/inocula_16S_qpcr_022521_Abs_Quant.txt
+#
+# output files:
+#	submission/Figure_S2.tiff
+#
 # Nick Lesniak 2022-01-12
 ###############################################################################
 # setup environment
@@ -204,4 +216,8 @@ ggsave(here('submission/Figure_S2.tiff'),
 		rel_heights = c(3, 2)),
 	height = 8, width = 8, unit = 'in',
 	compression = 'lzw')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_S2.tiff'), 
+		here('submission/Figure_S2.tiff')))
 ###############################################################################

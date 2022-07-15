@@ -1,8 +1,16 @@
 ###############################################################################
 #
 # Figure 6
-#	main idea - 
-# 	plot - 
+#	main idea - specific bacterial groups associated with cdiff clearance
+# 	plot - network of 1st order interactions with c difficile
+#
+# input files:
+#   code/functions.R
+#	code/ggnet2.R
+#	data/process/cdiff_network.rds
+#
+# output files:
+#	submission/Figure_6.tiff
 #
 # Nick Lesniak 2022-01-31
 ###############################################################################
@@ -77,4 +85,8 @@ ggsave(here::here('submission/Figure_6.tiff'),
 	cdiff_graph,
 	height = 4, width = 5, unit = 'in',
 	compression = 'lzw')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_6.tiff'), 
+		here('submission/Figure_6.tiff')))
 ###############################################################################

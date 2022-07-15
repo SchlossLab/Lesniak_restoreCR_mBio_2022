@@ -5,6 +5,13 @@
 # 	plot - cfu on 1 and 10 dpi for cef and strep when using diluted fmt
 #		relative abundance distribution for otus correlated with dilution
 #
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#
+# output files:
+#	submission/Figure_3.tiff
+#
 # Nick Lesniak 2022-01-12
 ###############################################################################
 # setup environment
@@ -74,4 +81,8 @@ ggsave(here('submission/Figure_3.tiff'),
 		rel_widths = c(1, 20)),
   height = 4, width = 5, unit = 'in',
 	compression = 'lzw')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_3.tiff'), 
+		here('submission/Figure_3.tiff')))
 ###############################################################################

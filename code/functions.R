@@ -3,13 +3,15 @@
 #	Common functions used across scripts
 #
 # need files:
-# 	produced by code/
-#		data/process/
+# 	produced by code/clean_metadata.R
+#		data/process/restore_metadata_clean.tsv
 #	produced through running mothur scripts
-#		data/mothur/
-#		data/mothur/
-#	produced by code/
-#		data/process/
+#		data/mothur/sample.final.0.03.subsample.shared
+#		data/mothur/sample.final.thetayc.0.03.lt.ave.nmds.axes
+#		data/mothur/sample.final.groups.ave-std.summary
+#		data/mothur/sample.final.thetayc.0.03.lt.ave.dist
+#	produced by code/tidy_taxonomy.R
+#		data/process/restore_taxonomy_clean.tsv
 #
 # Nick Lesniak 2022-01-12
 ###############################################################################

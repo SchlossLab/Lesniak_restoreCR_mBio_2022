@@ -1,8 +1,21 @@
 ###############################################################################
 #
-# Figure 4 and S3
-#	main idea - 
-# 	plot - 
+# Figure 4, S3, and S4
+#	main idea - Diversity was not significantly recovered in strep mice
+# 	plot - diversity of communities at the time of infection and in FCT dilutions
+#
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#	data/mothur/sample.final.0.03.subsample.shared
+#	data/mothur/sample.final.groups.ave-std.summary
+#	data/mothur/sample.final.thetayc.0.03.lt.ave.dist
+#	data/process/restore_taxonomy_clean.tsv
+#
+# output files:
+#	submission/Figure_4.tiff
+#	submission/Figure_S3.tiff
+#	submission/Figure_S4.tiff
 #
 # Nick Lesniak 2022-01-12
 ###############################################################################
@@ -224,4 +237,17 @@ ggsave(here('submission/Figure_S4.tiff'),
 	beta_diff_plot,
 	height = 3, width = 4, unit = 'in',
 	compression = 'lzw', bg = 'white')
+
+# reduce size of tiff
+system(paste("convert -compress lzw", 
+		here('submission/Figure_4.tiff'), 
+		here('submission/Figure_4.tiff')))
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_S3.tiff'), 
+		here('submission/Figure_S3.tiff')))
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_S4.tiff'), 
+		here('submission/Figure_S4.tiff')))
 ###############################################################################
