@@ -53,6 +53,6 @@ Antibiotic use, ubiquitous with the healthcare environment, is a major risk fact
 #### Running analysis
 
 ```
-git clone https://github.com/SchlossLab/Lesniak_Severity_mBio_2022.git
+git clone https://github.com/SchlossLab/Lesniak_restoreCR_mBio_2022.git
 make submission/manuscript.pdf
 ```
