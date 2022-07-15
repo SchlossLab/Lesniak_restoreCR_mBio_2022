@@ -1,8 +1,17 @@
 ###############################################################################
 #
-# Figure S4
-#	main idea - 
-# 	plot - 
+# Figure S6
+#	main idea - community at the time of challenge for cefoperazone-treated mice
+# 	plot - relative abundace of otus present in cef mice 
+#
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#	data/mothur/sample.final.0.03.subsample.shared
+#	data/process/restore_taxonomy_clean.tsv
+#
+# output files:
+#	submission/Figure_S6.tiff
 #
 # Nick Lesniak 2022-02-25
 ###############################################################################
@@ -89,4 +98,8 @@ ggsave(here('submission/Figure_S6.tiff'),
 	cef_shared_plot,
 	height = 8, width = 5, unit = 'in',
 	compression = 'lzw')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_S6.tiff'), 
+		here('submission/Figure_S6.tiff')))
 ###############################################################################

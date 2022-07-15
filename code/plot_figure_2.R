@@ -4,6 +4,13 @@
 #	main idea - test Fecal community in different antibiotic induced susceptibility
 # 	plot - cfu w/ and w/o Fecal community
 #
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#
+# output files:
+#	submission/Figure_2.tiff
+#
 # Nick Lesniak 2022-01-12
 ###############################################################################
 # setup environment
@@ -64,4 +71,8 @@ ggsave(here('submission/Figure_2.tiff'),
   cfu_plot, 
   height = 3.5, width = 4, unit = 'in',
   compression = 'lzw')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_2.tiff'), 
+		here('submission/Figure_2.tiff')))
 ###############################################################################

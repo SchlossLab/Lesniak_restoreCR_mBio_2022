@@ -1,8 +1,23 @@
 ###############################################################################
 #
 # Figure 5
-#	main idea - 
-# 	plot - 
+#	main idea - specific groups of bacteria differentiate clearance in strep
+# 	plot - relative abundance of bacteria significantly different by outcome
+#
+# input files:
+#	code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#	data/mothur/sample.final.0.03.subsample.shared
+#	data/process/restore_taxonomy_clean.tsv
+#	data/process/lefse/strep_day0_clearance_OTU.0.03.lefse_summary
+#	data/process/lefse/strep_day0_clearance_OTU.design
+#	data/process/lefse/strep_day10_clearance_OTU.0.03.lefse_summary
+#	data/process/lefse/strep_day10_clearance_OTU.design
+#	data/process/lefse/strep_day0_colonization_OTU.0.03.lefse_summary
+#	data/process/lefse/strep_day0_colonization_OTU.design
+#
+# output files:
+#	submission/Figure_5.tiff
 #
 # Nick Lesniak 2022-01-12
 ###############################################################################
@@ -129,4 +144,8 @@ ggsave(here('submission/Figure_5.tiff'),
                      labels = c('A', 'B', 'C')),
   height = 9, width = 5, unit = 'in',
 	compression = 'lzw', bg = 'white')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_5.tiff'), 
+		here('submission/Figure_5.tiff')))
 ###############################################################################

@@ -1,8 +1,15 @@
 ###############################################################################
 #
 # Figure S1
-#	main idea - 
-# 	plot - 
+#	main idea - Colonization and clearance of Cdiff
+# 	plot - Colonization dynamics of C difficile
+#
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#
+# output files:
+#	submission/Figure_S1.tiff
 #
 # Nick Lesniak 2022-01-12
 ###############################################################################
@@ -58,4 +65,8 @@ ggsave(here('submission/Figure_S1.tiff'),
 	individual_strep_plot,
 	height = 6, width = 4.5, unit = 'in',
 	compression = 'lzw')
+
+system(paste("convert -compress lzw", 
+		here('submission/Figure_S1.tiff'), 
+		here('submission/Figure_S1.tiff')))
 ###############################################################################

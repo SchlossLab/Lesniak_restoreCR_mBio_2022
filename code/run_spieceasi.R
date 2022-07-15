@@ -6,9 +6,13 @@
 # Nick Lesniak 01-28-2022
 #
 #  need files:
-#	data/process/
-#	data/mothur/
-#	data/process/
+#	code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#	data/mothur/sample.final.0.03.subsample.shared
+#	data/process/restore_taxonomy_clean.tsv
+#
+#  output files:
+#	data/process/cdiff_network.rds
 #
 ###############################################################################
 # setup environment

@@ -1,8 +1,19 @@
 ###############################################################################
 #
-# Figure S4
-#	main idea - 
-# 	plot - 
+# Figure S5
+#	main idea - Changes to community with antibiotic treatment
+# 	plot - Relative abundance of significantly different groups with streptomycin
+#
+# input files:
+#   code/functions.R
+#	data/process/restore_metadata_clean.tsv
+#	data/mothur/sample.final.0.03.subsample.shared
+#	data/process/restore_taxonomy_clean.tsv
+#	data/process/lefse/strep_antibiotic_OTU.design
+#	data/process/lefse/strep_antibiotic_OTU.0.03.lefse_summary
+#
+# output files:
+#	submission/Figure_S5.tiff
 #
 # Nick Lesniak 2022-01-12
 ###############################################################################
@@ -119,4 +130,7 @@ ggsave(here('submission/Figure_S5.tiff'),
 	height = 11, width = 10, unit = 'in',
 	compression = 'lzw')
 
+system(paste("convert -compress lzw", 
+		here('submission/Figure_S5.tiff'), 
+		here('submission/Figure_S5.tiff')))
 ###############################################################################
